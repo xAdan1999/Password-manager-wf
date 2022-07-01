@@ -2,7 +2,7 @@
 
 namespace password_manager_wf.Models.Responses
 {
-    public class WebsiteResponse
+    public class Response
     {
         public bool success { get; set; }
         public string message { get; set; }

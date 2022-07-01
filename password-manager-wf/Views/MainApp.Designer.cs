@@ -36,7 +36,12 @@ namespace password_manager_wf.Views
             this.btn_websites = new Guna.UI2.WinForms.Guna2TileButton();
             this.btn_home = new Guna.UI2.WinForms.Guna2TileButton();
             this.pl_container = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pl_container.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,6 +62,11 @@ namespace password_manager_wf.Views
             this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_exit.Animated = true;
             this.btn_exit.BorderRadius = 16;
+            this.btn_exit.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_exit.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
+            this.btn_exit.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btn_exit.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btn_exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_exit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_exit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_exit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -64,7 +74,11 @@ namespace password_manager_wf.Views
             this.btn_exit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.btn_exit.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.Gray;
+            this.btn_exit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
+            this.btn_exit.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_exit.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btn_exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_exit.Image")));
+            this.btn_exit.ImageSize = new System.Drawing.Size(17, 17);
             this.btn_exit.Location = new System.Drawing.Point(6, 509);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 70);
@@ -77,6 +91,10 @@ namespace password_manager_wf.Views
             // 
             this.btn_settings.Animated = true;
             this.btn_settings.BorderRadius = 16;
+            this.btn_settings.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_settings.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
+            this.btn_settings.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btn_settings.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btn_settings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_settings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_settings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -86,7 +104,9 @@ namespace password_manager_wf.Views
             this.btn_settings.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_settings.ForeColor = System.Drawing.Color.Gray;
             this.btn_settings.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_settings.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btn_settings.Image = ((System.Drawing.Image)(resources.GetObject("btn_settings.Image")));
+            this.btn_settings.ImageSize = new System.Drawing.Size(17, 17);
             this.btn_settings.Location = new System.Drawing.Point(6, 196);
             this.btn_settings.Name = "btn_settings";
             this.btn_settings.Size = new System.Drawing.Size(75, 70);
@@ -99,7 +119,10 @@ namespace password_manager_wf.Views
             // 
             this.btn_websites.Animated = true;
             this.btn_websites.BorderRadius = 16;
+            this.btn_websites.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btn_websites.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
+            this.btn_websites.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btn_websites.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btn_websites.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_websites.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_websites.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -109,6 +132,7 @@ namespace password_manager_wf.Views
             this.btn_websites.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_websites.ForeColor = System.Drawing.Color.Gray;
             this.btn_websites.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_websites.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btn_websites.Image = ((System.Drawing.Image)(resources.GetObject("btn_websites.Image")));
             this.btn_websites.ImageSize = new System.Drawing.Size(17, 17);
             this.btn_websites.Location = new System.Drawing.Point(6, 108);
@@ -123,7 +147,11 @@ namespace password_manager_wf.Views
             // 
             this.btn_home.Animated = true;
             this.btn_home.BorderRadius = 16;
+            this.btn_home.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_home.Checked = true;
             this.btn_home.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
+            this.btn_home.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btn_home.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.btn_home.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_home.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_home.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -133,7 +161,9 @@ namespace password_manager_wf.Views
             this.btn_home.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.ForeColor = System.Drawing.Color.Gray;
             this.btn_home.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_home.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
+            this.btn_home.ImageSize = new System.Drawing.Size(17, 17);
             this.btn_home.Location = new System.Drawing.Point(6, 20);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(75, 70);
@@ -144,11 +174,43 @@ namespace password_manager_wf.Views
             // 
             // pl_container
             // 
+            this.pl_container.Controls.Add(this.flowLayoutPanel1);
             this.pl_container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pl_container.Location = new System.Drawing.Point(88, 0);
+            this.pl_container.Location = new System.Drawing.Point(88, 31);
             this.pl_container.Name = "pl_container";
-            this.pl_container.Size = new System.Drawing.Size(901, 588);
+            this.pl_container.Size = new System.Drawing.Size(901, 557);
             this.pl_container.TabIndex = 1;
+            this.pl_container.Paint += new System.Windows.Forms.PaintEventHandler(this.pl_container_Paint);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(901, 557);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(88, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(901, 31);
+            this.panel2.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(40, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 15);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "xAdan99";
             // 
             // MainApp
             // 
@@ -157,13 +219,17 @@ namespace password_manager_wf.Views
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(989, 588);
             this.Controls.Add(this.pl_container);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(1005, 627);
             this.Name = "MainApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainApp";
+            this.Text = "Password App";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
+            this.pl_container.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -175,5 +241,8 @@ namespace password_manager_wf.Views
         private Guna.UI2.WinForms.Guna2TileButton btn_settings;
         private Guna.UI2.WinForms.Guna2TileButton btn_websites;
         private Guna.UI2.WinForms.Guna2TileButton btn_exit;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -29,31 +29,36 @@ namespace password_manager_wf
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.link_createAccount = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_login = new Guna.UI2.WinForms.Guna2Button();
-            this.txt_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txt_password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_showPassword = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_hidePassword = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // link_createAccount
             // 
-            this.link_createAccount.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(223)))), ((int)(((byte)(130)))));
+            this.link_createAccount.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
             this.link_createAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.link_createAccount.AutoSize = true;
             this.link_createAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.link_createAccount.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
-            this.link_createAccount.Location = new System.Drawing.Point(531, 500);
+            this.link_createAccount.Location = new System.Drawing.Point(531, 491);
             this.link_createAccount.Name = "link_createAccount";
             this.link_createAccount.Size = new System.Drawing.Size(47, 17);
             this.link_createAccount.TabIndex = 20;
             this.link_createAccount.TabStop = true;
             this.link_createAccount.Text = "Create";
-            this.link_createAccount.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(223)))), ((int)(((byte)(130)))));
+            this.link_createAccount.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
             this.link_createAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_createAccount_LinkClicked);
             // 
             // label3
@@ -62,7 +67,7 @@ namespace password_manager_wf
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(380, 500);
+            this.label3.Location = new System.Drawing.Point(380, 491);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 17);
             this.label3.TabIndex = 19;
@@ -81,41 +86,13 @@ namespace password_manager_wf
             this.btn_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(359, 390);
+            this.btn_login.Location = new System.Drawing.Point(359, 381);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(255, 39);
             this.btn_login.TabIndex = 18;
             this.btn_login.Text = "Login";
             this.btn_login.TextOffset = new System.Drawing.Point(0, -2);
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
-            // 
-            // txt_password
-            // 
-            this.txt_password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_password.Animated = true;
-            this.txt_password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.txt_password.BorderRadius = 7;
-            this.txt_password.BorderThickness = 0;
-            this.txt_password.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_password.DefaultText = "";
-            this.txt_password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_password.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txt_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(223)))), ((int)(((byte)(130)))));
-            this.txt_password.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_password.ForeColor = System.Drawing.Color.White;
-            this.txt_password.HoverState.BorderColor = System.Drawing.Color.DimGray;
-            this.txt_password.Location = new System.Drawing.Point(359, 317);
-            this.txt_password.Name = "txt_password";
-            this.txt_password.PasswordChar = '●';
-            this.txt_password.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txt_password.PlaceholderText = "Enter your password";
-            this.txt_password.SelectedText = "";
-            this.txt_password.Size = new System.Drawing.Size(255, 39);
-            this.txt_password.TabIndex = 17;
-            this.txt_password.TextOffset = new System.Drawing.Point(3, 0);
             // 
             // txt_email
             // 
@@ -135,7 +112,7 @@ namespace password_manager_wf
             this.txt_email.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.ForeColor = System.Drawing.Color.White;
             this.txt_email.HoverState.BorderColor = System.Drawing.Color.DimGray;
-            this.txt_email.Location = new System.Drawing.Point(359, 241);
+            this.txt_email.Location = new System.Drawing.Point(362, 233);
             this.txt_email.Name = "txt_email";
             this.txt_email.PasswordChar = '\0';
             this.txt_email.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -151,7 +128,7 @@ namespace password_manager_wf
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(359, 156);
+            this.label2.Location = new System.Drawing.Point(362, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 17);
             this.label2.TabIndex = 15;
@@ -163,7 +140,7 @@ namespace password_manager_wf
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(355, 112);
+            this.label1.Location = new System.Drawing.Point(356, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 40);
             this.label1.TabIndex = 14;
@@ -175,7 +152,7 @@ namespace password_manager_wf
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(359, 214);
+            this.label4.Location = new System.Drawing.Point(362, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 22;
@@ -187,11 +164,98 @@ namespace password_manager_wf
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(359, 290);
+            this.label5.Location = new System.Drawing.Point(362, 283);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 17);
             this.label5.TabIndex = 23;
             this.label5.Text = "Password";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Panel1.BorderRadius = 7;
+            this.guna2Panel1.Controls.Add(this.txt_password);
+            this.guna2Panel1.Controls.Add(this.btn_showPassword);
+            this.guna2Panel1.Controls.Add(this.btn_hidePassword);
+            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.guna2Panel1.Location = new System.Drawing.Point(362, 311);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(255, 39);
+            this.guna2Panel1.TabIndex = 35;
+            // 
+            // txt_password
+            // 
+            this.txt_password.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_password.Animated = true;
+            this.txt_password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txt_password.BorderThickness = 0;
+            this.txt_password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_password.DefaultText = "";
+            this.txt_password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_password.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.txt_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(223)))), ((int)(((byte)(130)))));
+            this.txt_password.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_password.ForeColor = System.Drawing.Color.White;
+            this.txt_password.HoverState.BorderColor = System.Drawing.Color.DimGray;
+            this.txt_password.Location = new System.Drawing.Point(2, 3);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_password.MaxLength = 45;
+            this.txt_password.Name = "txt_password";
+            this.txt_password.PasswordChar = '\0';
+            this.txt_password.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txt_password.PlaceholderText = "Enter a password";
+            this.txt_password.SelectedText = "";
+            this.txt_password.Size = new System.Drawing.Size(205, 33);
+            this.txt_password.TabIndex = 2;
+            this.txt_password.TextOffset = new System.Drawing.Point(1, 0);
+            // 
+            // btn_showPassword
+            // 
+            this.btn_showPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_showPassword.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_showPassword.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_showPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_showPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_showPassword.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btn_showPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_showPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_showPassword.ForeColor = System.Drawing.Color.White;
+            this.btn_showPassword.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_showPassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btn_showPassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_showPassword.Image")));
+            this.btn_showPassword.ImageSize = new System.Drawing.Size(17, 17);
+            this.btn_showPassword.Location = new System.Drawing.Point(215, 3);
+            this.btn_showPassword.Name = "btn_showPassword";
+            this.btn_showPassword.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_showPassword.Size = new System.Drawing.Size(36, 33);
+            this.btn_showPassword.TabIndex = 35;
+            this.btn_showPassword.Click += new System.EventHandler(this.btn_showPassword_Click);
+            // 
+            // btn_hidePassword
+            // 
+            this.btn_hidePassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_hidePassword.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_hidePassword.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_hidePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_hidePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_hidePassword.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btn_hidePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_hidePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_hidePassword.ForeColor = System.Drawing.Color.White;
+            this.btn_hidePassword.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_hidePassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btn_hidePassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_hidePassword.Image")));
+            this.btn_hidePassword.ImageSize = new System.Drawing.Size(17, 17);
+            this.btn_hidePassword.Location = new System.Drawing.Point(215, 3);
+            this.btn_hidePassword.Name = "btn_hidePassword";
+            this.btn_hidePassword.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_hidePassword.Size = new System.Drawing.Size(36, 33);
+            this.btn_hidePassword.TabIndex = 36;
+            this.btn_hidePassword.Visible = false;
+            this.btn_hidePassword.Click += new System.EventHandler(this.btn_hidePassword_Click);
             // 
             // Login
             // 
@@ -199,20 +263,21 @@ namespace password_manager_wf
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(989, 588);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.link_createAccount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_login);
-            this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(762, 597);
             this.Name = "Login";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Login_Load);
+            this.Text = "Login";
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,12 +287,15 @@ namespace password_manager_wf
         public System.Windows.Forms.LinkLabel link_createAccount;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btn_login;
-        private Guna.UI2.WinForms.Guna2TextBox txt_password;
         private Guna.UI2.WinForms.Guna2TextBox txt_email;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2TextBox txt_password;
+        private Guna.UI2.WinForms.Guna2Button btn_hidePassword;
+        private Guna.UI2.WinForms.Guna2Button btn_showPassword;
     }
 }
 

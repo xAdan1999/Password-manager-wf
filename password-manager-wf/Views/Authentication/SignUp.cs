@@ -2,7 +2,6 @@
 using password_manager_wf.Controlles;
 using password_manager_wf.Models;
 using System.Windows.Forms;
-using System.Drawing;
 using System;
 
 namespace password_manager_wf
@@ -16,23 +15,16 @@ namespace password_manager_wf
         public SignUp(Login login)
         {
             InitializeComponent();
+            txt_password.UseSystemPasswordChar = true;
             this.login = login;
         }
 
         private void SetLoading()
         {
-            btn_createAccount.Enabled = false;
+            pb_loading.Enabled = true;
             pb_loading.Visible = true;
+            btn_createAccount.Enabled = false;
             btn_createAccount.Text = "Creating account...";
-            pb_loading.BackColor = Color.FromArgb(165, 165, 165);
-        }
-
-        private void CancelLoading()
-        {
-            btn_createAccount.Enabled = true;
-            pb_loading.Visible = false;
-            btn_createAccount.Text = "Create account";
-            pb_loading.BackColor = Color.FromArgb(68, 223, 130);
         }
 
         private async void btn_createAccount_Click(object sender, EventArgs e)
@@ -49,8 +41,8 @@ namespace password_manager_wf
                     user.username = txt_username.Text.Trim();
 
                     SetLoading();
-                    await service.InsertUser(user);
-                    CancelLoading();
+                    //await service.InsertUser(user);
+                    //CancelLoading();
                 }
                 else
                 {
@@ -61,6 +53,22 @@ namespace password_manager_wf
             {
 
             }
+        }
+
+        private void btn_showPassword_Click(object sender, EventArgs e)
+        {
+            txt_password.Focus();
+            btn_showPassword.Visible = false;
+            btn_hidePassword.Visible = true;
+            txt_password.UseSystemPasswordChar = false;
+        }
+
+        private void btn_hidePassword_Click(object sender, EventArgs e)
+        {
+            txt_password.Focus();
+            btn_showPassword.Visible = true;
+            btn_hidePassword.Visible = false;
+            txt_password.UseSystemPasswordChar = true;
         }
 
         private void btn_back_Click(object sender, EventArgs e)

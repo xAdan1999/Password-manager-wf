@@ -1,5 +1,7 @@
 ﻿using System.Windows.Forms;
 using System;
+using System.Net;
+using System.Drawing;
 
 namespace password_manager_wf.Views
 {
@@ -10,8 +12,6 @@ namespace password_manager_wf.Views
         public MainApp()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void OpenChildForm(Form childForm)
@@ -28,7 +28,7 @@ namespace password_manager_wf.Views
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Home());
         }
 
         private void btn_websites_Click(object sender, EventArgs e)
@@ -42,6 +42,11 @@ namespace password_manager_wf.Views
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pl_container_Paint(object sender, PaintEventArgs e)
         {
 
         }

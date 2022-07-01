@@ -24,10 +24,10 @@ namespace password_manager_wf.Views
             this._id = id;
             this._updateWebsite = updateWebsite;
             lb_title.Text = "Update website";
-            btn_add.Text = "Update";
+            btn_save.Text = "Update";
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
         {
             InsertUpdate();
         }
@@ -74,6 +74,12 @@ namespace password_manager_wf.Views
                     }
                 }
             }
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void btn_back_Click(object sender, EventArgs e)

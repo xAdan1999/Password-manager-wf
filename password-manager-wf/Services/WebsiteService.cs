@@ -16,7 +16,7 @@ namespace password_manager_wf.Controlles
         string baseURL = "http://localhost:3000/api/websites";
 
         public async Task<List<Website>> GetWebsites()
-        { 
+        {
             //lista a llenar con los websites
             List<Website> websites = null;
 
@@ -25,13 +25,15 @@ namespace password_manager_wf.Controlles
             string jsonString = await response.Content.ReadAsStringAsync();
 
             //si la respuesta tuvo un status code exitoso
-            if (response.IsSuccessStatusCode) {
+            if (response.IsSuccessStatusCode)
+            {
                 websites = JsonConvert.DeserializeObject<List<Website>>(jsonString);
             }
-            else {
+            else
+            {
                 //de lo contrario deserializar la respuesta en su debido modelo y mostrarla
-                WebsiteResponse websiteResponse = JsonConvert.DeserializeObject<WebsiteResponse>(jsonString);
-                MessageBox.Show(websiteResponse.message, "Information", 
+                Response websiteResponse = JsonConvert.DeserializeObject<Response>(jsonString);
+                MessageBox.Show(websiteResponse.message, "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -51,19 +53,6 @@ namespace password_manager_wf.Controlles
             var response = await client.GetAsync(baseURL + "/" + websiteName);
             string jsonString = await response.Content.ReadAsStringAsync();
             websites = JsonConvert.DeserializeObject<List<Website>>(jsonString);
-
-            ////si la respuesta tuvo un status code exitoso
-            //if (response.IsSuccessStatusCode)
-            //{
-                
-            //}
-            //else
-            //{
-            //    //de lo contrario deserializar la respuesta en su debido modelo y mostrarla
-            //    WebsiteResponse websiteResponse = JsonConvert.DeserializeObject<WebsiteResponse>(jsonString);
-            //    MessageBox.Show(websiteResponse.message, "Information",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
 
             //desechar la respuesta despues de haber hecho las acciones necesarias
             response.Dispose();
@@ -88,7 +77,7 @@ namespace password_manager_wf.Controlles
             string jsonString = await response.Content.ReadAsStringAsync();
 
             //deserializar la respuesta en el modelo correspondiente
-            WebsiteResponse websiteResponse = JsonConvert.DeserializeObject<WebsiteResponse>(jsonString);
+            Response websiteResponse = JsonConvert.DeserializeObject<Response>(jsonString);
 
             //si la respuesta fue exitosa
             if (response.IsSuccessStatusCode)
@@ -123,7 +112,7 @@ namespace password_manager_wf.Controlles
             string jsonString = await response.Content.ReadAsStringAsync();
 
             //deserializar la respuesta en el modelo correspondiente
-            WebsiteResponse websiteResponse = JsonConvert.DeserializeObject<WebsiteResponse>(jsonString);
+            Response websiteResponse = JsonConvert.DeserializeObject<Response>(jsonString);
 
             //si la respuesta fue exitosa
             if (response.IsSuccessStatusCode)
@@ -152,7 +141,7 @@ namespace password_manager_wf.Controlles
             string jsonString = await response.Content.ReadAsStringAsync();
 
             //deserializar la respuesta en el modelo correspondiente
-            WebsiteResponse websiteResponse = JsonConvert.DeserializeObject<WebsiteResponse>(jsonString);
+            Response websiteResponse = JsonConvert.DeserializeObject<Response>(jsonString);
 
             //si la respuesta fue exitosa
             if (response.IsSuccessStatusCode)
