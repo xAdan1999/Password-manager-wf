@@ -2,6 +2,7 @@
 using System;
 using System.Net;
 using System.Drawing;
+using password_manager_wf.Views.Modals;
 
 namespace password_manager_wf.Views
 {
@@ -12,6 +13,7 @@ namespace password_manager_wf.Views
         public MainApp()
         {
             InitializeComponent();
+            OpenChildForm(new Home());
         }
 
         private void OpenChildForm(Form childForm)

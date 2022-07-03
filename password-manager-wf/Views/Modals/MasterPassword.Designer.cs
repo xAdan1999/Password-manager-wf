@@ -1,7 +1,7 @@
 ﻿
-namespace password_manager_wf.Views
+namespace password_manager_wf.Views.Modals
 {
-    partial class WebsiteModal
+    partial class MasterPassword
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@ namespace password_manager_wf.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WebsiteModal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterPassword));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.lb_title = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             this.txt_websiteName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lb_title = new System.Windows.Forms.Label();
             this.btn_back = new Guna.UI2.WinForms.Guna2Button();
             this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
@@ -47,6 +47,17 @@ namespace password_manager_wf.Views
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // lb_title
+            // 
+            this.lb_title.AutoSize = true;
+            this.lb_title.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_title.ForeColor = System.Drawing.Color.White;
+            this.lb_title.Location = new System.Drawing.Point(129, 92);
+            this.lb_title.Name = "lb_title";
+            this.lb_title.Size = new System.Drawing.Size(138, 21);
+            this.lb_title.TabIndex = 42;
+            this.lb_title.Text = "Master password";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -54,9 +65,9 @@ namespace password_manager_wf.Views
             this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(130, 160);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 17);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Website name";
+            this.label5.Size = new System.Drawing.Size(112, 17);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Master password";
             // 
             // btn_save
             // 
@@ -70,11 +81,11 @@ namespace password_manager_wf.Views
             this.btn_save.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
             this.btn_save.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(265, 321);
+            this.btn_save.Location = new System.Drawing.Point(264, 321);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(120, 39);
-            this.btn_save.TabIndex = 25;
-            this.btn_save.Text = "Save";
+            this.btn_save.TabIndex = 40;
+            this.btn_save.Text = "Continue";
             this.btn_save.TextOffset = new System.Drawing.Point(0, -2);
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
@@ -99,23 +110,11 @@ namespace password_manager_wf.Views
             this.txt_websiteName.Name = "txt_websiteName";
             this.txt_websiteName.PasswordChar = '\0';
             this.txt_websiteName.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txt_websiteName.PlaceholderText = "Enter the website name";
+            this.txt_websiteName.PlaceholderText = "Enter your master password";
             this.txt_websiteName.SelectedText = "";
             this.txt_websiteName.Size = new System.Drawing.Size(255, 39);
-            this.txt_websiteName.TabIndex = 24;
+            this.txt_websiteName.TabIndex = 39;
             this.txt_websiteName.TextOffset = new System.Drawing.Point(3, 0);
-            this.txt_websiteName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_websiteName_KeyDown);
-            // 
-            // lb_title
-            // 
-            this.lb_title.AutoSize = true;
-            this.lb_title.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_title.ForeColor = System.Drawing.Color.White;
-            this.lb_title.Location = new System.Drawing.Point(129, 92);
-            this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(104, 21);
-            this.lb_title.TabIndex = 27;
-            this.lb_title.Text = "Add website";
             // 
             // btn_back
             // 
@@ -135,11 +134,10 @@ namespace password_manager_wf.Views
             this.btn_back.ImageSize = new System.Drawing.Size(15, 15);
             this.btn_back.Location = new System.Drawing.Point(2, 2);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(115, 39);
-            this.btn_back.TabIndex = 33;
-            this.btn_back.Text = "Back";
+            this.btn_back.Size = new System.Drawing.Size(253, 39);
+            this.btn_back.TabIndex = 43;
+            this.btn_back.Text = "Login with another account";
             this.btn_back.TextOffset = new System.Drawing.Point(0, -1);
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // btn_cancel
             // 
@@ -157,12 +155,11 @@ namespace password_manager_wf.Views
             this.btn_cancel.Location = new System.Drawing.Point(129, 321);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(120, 39);
-            this.btn_cancel.TabIndex = 34;
-            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.TabIndex = 44;
+            this.btn_cancel.Text = "Close";
             this.btn_cancel.TextOffset = new System.Drawing.Point(0, -2);
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
-            // WebsiteModal
+            // MasterPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,19 +172,20 @@ namespace password_manager_wf.Views
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_websiteName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "WebsiteModal";
+            this.Name = "MasterPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WebsiteModal";
+            this.Text = "EnterMasterPassword";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        public System.Windows.Forms.Label lb_title;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button btn_save;
-        public System.Windows.Forms.Label lb_title;
         public Guna.UI2.WinForms.Guna2TextBox txt_websiteName;
         private Guna.UI2.WinForms.Guna2Button btn_back;
         private Guna.UI2.WinForms.Guna2Button btn_cancel;

@@ -47,7 +47,7 @@ namespace password_manager_wf.Views
             dataGridView1.Columns[5].HeaderText = "Website";
             dataGridView1.Columns[5].Width = 150;
             dataGridView1.Columns[6].HeaderText = "Username or email";
-            dataGridView1.Columns[6].Width = 220;
+            dataGridView1.Columns[6].Width = 250;
             dataGridView1.Columns[7].HeaderText = "Password";
             dataGridView1.Columns[7].Width = 450;
         }
@@ -79,8 +79,7 @@ namespace password_manager_wf.Views
                     PasswordModal modal = new PasswordModal(id, true);
                     modal.cb_website.Text = dataGridView1.Rows[e.RowIndex].Cells["websiteName"].Value.ToString();
                     modal.txt_usernameOrEmail.Text = dataGridView1.Rows[e.RowIndex].Cells["usernameOrEmail"].Value.ToString();
-                    string password = dataGridView1.Rows[e.RowIndex].Cells["passwordToSave"].Value.ToString();
-                    modal.txt_password.Text = password;
+                    modal.txt_password.Text = dataGridView1.Rows[e.RowIndex].Cells["passwordToSave"].Value.ToString();
                     var result = modal.ShowDialog();
 
                     if (result == DialogResult.OK)
@@ -106,7 +105,7 @@ namespace password_manager_wf.Views
             }
         }
 
-        private void txt_search_TextChanged(object sender, EventArgs e)
+        private void txt_search_TextChanged_1(object sender, EventArgs e)
         {
             SearchPassword();
         }

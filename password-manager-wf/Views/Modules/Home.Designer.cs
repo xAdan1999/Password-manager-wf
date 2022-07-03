@@ -196,6 +196,7 @@ namespace password_manager_wf.Views
             this.txt_search.Size = new System.Drawing.Size(666, 39);
             this.txt_search.TabIndex = 164;
             this.txt_search.TextOffset = new System.Drawing.Point(3, 0);
+            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged_1);
             // 
             // Home
             // 

@@ -69,6 +69,7 @@ namespace password_manager_wf.Views.Modals
                     password.websiteId = Convert.ToInt32(cb_website.SelectedValue);
                     password.usernameOrEmail = txt_usernameOrEmail.Text.Trim();
                     password.passwordToSave = txt_password.Text.Trim();
+
                     bool success = await passwordService.InsertPassword(password);
 
                     if (success)
@@ -85,6 +86,7 @@ namespace password_manager_wf.Views.Modals
                 password.websiteId = Convert.ToInt32(cb_website.SelectedValue);
                 password.usernameOrEmail = txt_usernameOrEmail.Text.Trim();
                 password.passwordToSave = txt_password.Text.Trim();
+
                 bool success = await passwordService.UpdatePassword(password);
 
                 if (success)
