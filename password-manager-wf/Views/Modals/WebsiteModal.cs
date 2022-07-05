@@ -1,5 +1,6 @@
 ﻿using password_manager_wf.Controlles;
 using password_manager_wf.Models;
+using password_manager_wf.Cache;
 using System.Windows.Forms;
 using System;
 
@@ -47,7 +48,7 @@ namespace password_manager_wf.Views
                 if (!string.IsNullOrEmpty(txt_websiteName.Text))
                 {
                     Website website = new Website();
-                    website.userId = 1;
+                    website.userId = UserCache.userId;
                     website.websiteName = txt_websiteName.Text.Trim();
                     bool success = await service.InsertWebsite(website);
 

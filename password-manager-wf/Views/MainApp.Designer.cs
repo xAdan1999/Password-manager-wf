@@ -36,11 +36,9 @@ namespace password_manager_wf.Views
             this.btn_websites = new Guna.UI2.WinForms.Guna2TileButton();
             this.btn_home = new Guna.UI2.WinForms.Guna2TileButton();
             this.pl_container = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lb_username = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.pl_container.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,43 +172,33 @@ namespace password_manager_wf.Views
             // 
             // pl_container
             // 
-            this.pl_container.Controls.Add(this.flowLayoutPanel1);
             this.pl_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pl_container.Location = new System.Drawing.Point(88, 31);
             this.pl_container.Name = "pl_container";
             this.pl_container.Size = new System.Drawing.Size(901, 557);
             this.pl_container.TabIndex = 1;
-            this.pl_container.Paint += new System.Windows.Forms.PaintEventHandler(this.pl_container_Paint);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(901, 557);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lb_username);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(88, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(901, 31);
             this.panel2.TabIndex = 0;
             // 
-            // label5
+            // lb_username
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(40, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 15);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "xAdan99";
+            this.lb_username.AutoSize = true;
+            this.lb_username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.lb_username.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_username.ForeColor = System.Drawing.Color.Gray;
+            this.lb_username.Location = new System.Drawing.Point(40, 15);
+            this.lb_username.Name = "lb_username";
+            this.lb_username.Size = new System.Drawing.Size(59, 15);
+            this.lb_username.TabIndex = 27;
+            this.lb_username.Text = "username";
             // 
             // MainApp
             // 
@@ -227,7 +215,6 @@ namespace password_manager_wf.Views
             this.Text = "Password App";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            this.pl_container.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -242,7 +229,6 @@ namespace password_manager_wf.Views
         private Guna.UI2.WinForms.Guna2TileButton btn_websites;
         private Guna.UI2.WinForms.Guna2TileButton btn_exit;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label lb_username;
     }
 }

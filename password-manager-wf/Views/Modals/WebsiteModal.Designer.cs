@@ -36,8 +36,10 @@ namespace password_manager_wf.Views
             this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             this.txt_websiteName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lb_title = new System.Windows.Forms.Label();
-            this.btn_back = new Guna.UI2.WinForms.Guna2Button();
             this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_back = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -51,7 +53,7 @@ namespace password_manager_wf.Views
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.ForeColor = System.Drawing.Color.DarkGray;
             this.label5.Location = new System.Drawing.Point(130, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 17);
@@ -70,7 +72,7 @@ namespace password_manager_wf.Views
             this.btn_save.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
             this.btn_save.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(265, 321);
+            this.btn_save.Location = new System.Drawing.Point(264, 284);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(120, 39);
             this.btn_save.TabIndex = 25;
@@ -117,30 +119,6 @@ namespace password_manager_wf.Views
             this.lb_title.TabIndex = 27;
             this.lb_title.Text = "Add website";
             // 
-            // btn_back
-            // 
-            this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_back.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_back.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_back.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_back.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_back.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btn_back.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.ForeColor = System.Drawing.Color.DarkGray;
-            this.btn_back.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btn_back.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_back.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
-            this.btn_back.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btn_back.ImageSize = new System.Drawing.Size(15, 15);
-            this.btn_back.Location = new System.Drawing.Point(2, 2);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(115, 39);
-            this.btn_back.TabIndex = 33;
-            this.btn_back.Text = "Back";
-            this.btn_back.TextOffset = new System.Drawing.Point(0, -1);
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
-            // 
             // btn_cancel
             // 
             this.btn_cancel.Animated = true;
@@ -152,9 +130,9 @@ namespace password_manager_wf.Views
             this.btn_cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_cancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.btn_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.ForeColor = System.Drawing.Color.DimGray;
+            this.btn_cancel.ForeColor = System.Drawing.Color.Gray;
             this.btn_cancel.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(129, 321);
+            this.btn_cancel.Location = new System.Drawing.Point(128, 284);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(120, 39);
             this.btn_cancel.TabIndex = 34;
@@ -162,22 +140,60 @@ namespace password_manager_wf.Views
             this.btn_cancel.TextOffset = new System.Drawing.Point(0, -2);
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.btn_back);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(514, 41);
+            this.panel1.TabIndex = 42;
+            // 
+            // btn_back
+            // 
+            this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_back.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_back.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_back.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_back.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_back.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_back.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.ForeColor = System.Drawing.Color.DarkGray;
+            this.btn_back.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_back.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_back.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
+            this.btn_back.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btn_back.ImageSize = new System.Drawing.Size(15, 15);
+            this.btn_back.Location = new System.Drawing.Point(3, 7);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_back.Size = new System.Drawing.Size(115, 26);
+            this.btn_back.TabIndex = 37;
+            this.btn_back.Text = "Back";
+            this.btn_back.TextOffset = new System.Drawing.Point(0, -1);
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // WebsiteModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(514, 428);
+            this.ClientSize = new System.Drawing.Size(514, 397);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.lb_title);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_websiteName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(514, 397);
+            this.MinimumSize = new System.Drawing.Size(514, 397);
             this.Name = "WebsiteModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WebsiteModal";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +205,8 @@ namespace password_manager_wf.Views
         private Guna.UI2.WinForms.Guna2Button btn_save;
         public System.Windows.Forms.Label lb_title;
         public Guna.UI2.WinForms.Guna2TextBox txt_websiteName;
-        private Guna.UI2.WinForms.Guna2Button btn_back;
         private Guna.UI2.WinForms.Guna2Button btn_cancel;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button btn_back;
     }
 }

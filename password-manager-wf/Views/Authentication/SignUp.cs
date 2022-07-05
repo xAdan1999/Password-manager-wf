@@ -1,6 +1,7 @@
 ﻿using password_manager_wf.Models.Responses;
 using password_manager_wf.Controlles;
 using password_manager_wf.Models;
+using password_manager_wf.Views;
 using System.Windows.Forms;
 using System;
 
@@ -19,7 +20,7 @@ namespace password_manager_wf
             this.login = login;
         }
 
-        private void SetLoading()
+        private void ShowLoading()
         {
             pb_loading.Enabled = true;
             pb_loading.Visible = true;
@@ -29,29 +30,28 @@ namespace password_manager_wf
 
         private async void btn_createAccount_Click(object sender, EventArgs e)
         {
-            try
+            if (!string.IsNullOrEmpty(txt_email.Text.Trim())
+            && !string.IsNullOrEmpty(txt_password.Text.Trim())
+            && !string.IsNullOrEmpty(txt_username.Text.Trim()))
             {
-                if (!string.IsNullOrEmpty(txt_email.Text.Trim())
-                   && !string.IsNullOrEmpty(txt_password.Text.Trim())
-                   && !string.IsNullOrEmpty(txt_username.Text.Trim()))
-                {
-                    User user = new User();
-                    user.email = txt_email.Text.Trim();
-                    user.password = txt_password.Text.Trim();
-                    user.username = txt_username.Text.Trim();
+                User user = new User();
+                user.email = txt_email.Text.Trim();
+                user.password = txt_password.Text.Trim();
+                user.username = txt_username.Text.Trim();
 
-                    SetLoading();
-                    //await service.InsertUser(user);
-                    //CancelLoading();
-                }
-                else
+                ShowLoading();
+                bool success = await service.SignUp(user);
+
+                if (success)
                 {
-                    MessageBox.Show("Please fill all fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    MainApp mainApp = new MainApp(new Login());
+                    mainApp.Show();
                 }
             }
-            catch (Exception ex)
+            else
             {
-
+                MessageBox.Show("Please fill all fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -75,6 +75,11 @@ namespace password_manager_wf
         {
             login.Show();
             this.Close();
+        }
+
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

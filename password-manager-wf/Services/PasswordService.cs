@@ -1,5 +1,6 @@
 ﻿using password_manager_wf.Models.Responses;
 using password_manager_wf.Models;
+using password_manager_wf.Cache;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace password_manager_wf.Controlles
         public async Task<List<Password>> GetPasswords()
         {
             List<Password> passwords = null;
-            var response = await client.GetAsync(baseURL);
+            var response = await client.GetAsync(baseURL+$"/{UserCache.userId}");
             string jsonString = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {

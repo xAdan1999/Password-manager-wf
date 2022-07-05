@@ -1,5 +1,6 @@
 ﻿using password_manager_wf.Controlles;
 using password_manager_wf.Models;
+using password_manager_wf.Cache;
 using System.Windows.Forms;
 using System;
 
@@ -16,6 +17,7 @@ namespace password_manager_wf.Views.Modals
         public PasswordModal()
         {
             InitializeComponent();
+            txt_password.UseSystemPasswordChar = true;
             GetWebsites();
         }
 
@@ -65,7 +67,7 @@ namespace password_manager_wf.Views.Modals
                 if (!string.IsNullOrEmpty(txt_usernameOrEmail.Text.Trim()) && !string.IsNullOrEmpty(txt_password.Text.Trim()))
                 {
                     Password password = new Password();
-                    password.userId = 1;
+                    password.userId = UserCache.userId;
                     password.websiteId = Convert.ToInt32(cb_website.SelectedValue);
                     password.usernameOrEmail = txt_usernameOrEmail.Text.Trim();
                     password.passwordToSave = txt_password.Text.Trim();
@@ -95,6 +97,22 @@ namespace password_manager_wf.Views.Modals
                     this.Close();
                 }
             }
+        }
+
+        private void btn_showPassword_Click(object sender, EventArgs e)
+        {
+            txt_password.Focus();
+            btn_showPassword.Visible = false;
+            btn_hidePassword.Visible = true;
+            txt_password.UseSystemPasswordChar = false;
+        }
+
+        private void btn_hidePassword_Click(object sender, EventArgs e)
+        {
+            txt_password.Focus();
+            btn_showPassword.Visible = true;
+            btn_hidePassword.Visible = false;
+            txt_password.UseSystemPasswordChar = true;
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

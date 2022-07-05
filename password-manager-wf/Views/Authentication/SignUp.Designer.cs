@@ -40,11 +40,9 @@ namespace password_manager_wf
             this.txt_username = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_back = new Guna.UI2.WinForms.Guna2Button();
             this.pb_loading = new System.Windows.Forms.PictureBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_showPassword = new Guna.UI2.WinForms.Guna2Button();
             this.btn_hidePassword = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_loading)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_createAccount
@@ -59,7 +57,7 @@ namespace password_manager_wf
             this.btn_createAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
             this.btn_createAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_createAccount.ForeColor = System.Drawing.Color.White;
-            this.btn_createAccount.Location = new System.Drawing.Point(366, 434);
+            this.btn_createAccount.Location = new System.Drawing.Point(366, 428);
             this.btn_createAccount.Name = "btn_createAccount";
             this.btn_createAccount.Size = new System.Drawing.Size(255, 39);
             this.btn_createAccount.TabIndex = 4;
@@ -108,6 +106,7 @@ namespace password_manager_wf
             this.txt_password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_password.Animated = true;
             this.txt_password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txt_password.BorderRadius = 7;
             this.txt_password.BorderThickness = 0;
             this.txt_password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_password.DefaultText = "";
@@ -120,7 +119,7 @@ namespace password_manager_wf
             this.txt_password.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_password.ForeColor = System.Drawing.Color.White;
             this.txt_password.HoverState.BorderColor = System.Drawing.Color.DimGray;
-            this.txt_password.Location = new System.Drawing.Point(2, 3);
+            this.txt_password.Location = new System.Drawing.Point(366, 280);
             this.txt_password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_password.MaxLength = 45;
             this.txt_password.Name = "txt_password";
@@ -128,7 +127,7 @@ namespace password_manager_wf
             this.txt_password.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txt_password.PlaceholderText = "Enter a password";
             this.txt_password.SelectedText = "";
-            this.txt_password.Size = new System.Drawing.Size(205, 33);
+            this.txt_password.Size = new System.Drawing.Size(205, 39);
             this.txt_password.TabIndex = 2;
             this.txt_password.TextOffset = new System.Drawing.Point(1, 0);
             // 
@@ -230,9 +229,10 @@ namespace password_manager_wf
             // 
             // pb_loading
             // 
+            this.pb_loading.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pb_loading.Enabled = false;
             this.pb_loading.Image = ((System.Drawing.Image)(resources.GetObject("pb_loading.Image")));
-            this.pb_loading.Location = new System.Drawing.Point(473, 499);
+            this.pb_loading.Location = new System.Drawing.Point(473, 493);
             this.pb_loading.Name = "pb_loading";
             this.pb_loading.Size = new System.Drawing.Size(31, 31);
             this.pb_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -240,21 +240,9 @@ namespace password_manager_wf
             this.pb_loading.TabStop = false;
             this.pb_loading.Visible = false;
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Panel1.BorderRadius = 7;
-            this.guna2Panel1.Controls.Add(this.txt_password);
-            this.guna2Panel1.Controls.Add(this.btn_showPassword);
-            this.guna2Panel1.Controls.Add(this.btn_hidePassword);
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(366, 280);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(255, 39);
-            this.guna2Panel1.TabIndex = 34;
-            // 
             // btn_showPassword
             // 
+            this.btn_showPassword.BorderRadius = 7;
             this.btn_showPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.btn_showPassword.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_showPassword.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -268,15 +256,16 @@ namespace password_manager_wf
             this.btn_showPassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btn_showPassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_showPassword.Image")));
             this.btn_showPassword.ImageSize = new System.Drawing.Size(17, 17);
-            this.btn_showPassword.Location = new System.Drawing.Point(215, 3);
+            this.btn_showPassword.Location = new System.Drawing.Point(582, 280);
             this.btn_showPassword.Name = "btn_showPassword";
             this.btn_showPassword.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.btn_showPassword.Size = new System.Drawing.Size(36, 33);
+            this.btn_showPassword.Size = new System.Drawing.Size(39, 39);
             this.btn_showPassword.TabIndex = 35;
             this.btn_showPassword.Click += new System.EventHandler(this.btn_showPassword_Click);
             // 
             // btn_hidePassword
             // 
+            this.btn_hidePassword.BorderRadius = 7;
             this.btn_hidePassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.btn_hidePassword.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_hidePassword.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -290,10 +279,10 @@ namespace password_manager_wf
             this.btn_hidePassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btn_hidePassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_hidePassword.Image")));
             this.btn_hidePassword.ImageSize = new System.Drawing.Size(17, 17);
-            this.btn_hidePassword.Location = new System.Drawing.Point(215, 3);
+            this.btn_hidePassword.Location = new System.Drawing.Point(582, 280);
             this.btn_hidePassword.Name = "btn_hidePassword";
             this.btn_hidePassword.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.btn_hidePassword.Size = new System.Drawing.Size(36, 33);
+            this.btn_hidePassword.Size = new System.Drawing.Size(39, 39);
             this.btn_hidePassword.TabIndex = 36;
             this.btn_hidePassword.Visible = false;
             this.btn_hidePassword.Click += new System.EventHandler(this.btn_hidePassword_Click);
@@ -304,7 +293,9 @@ namespace password_manager_wf
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(989, 588);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.btn_showPassword);
+            this.Controls.Add(this.btn_hidePassword);
+            this.Controls.Add(this.txt_password);
             this.Controls.Add(this.pb_loading);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.label3);
@@ -318,8 +309,8 @@ namespace password_manager_wf
             this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUp";
+            this.Load += new System.EventHandler(this.SignUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_loading)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,7 +327,6 @@ namespace password_manager_wf
         private Guna.UI2.WinForms.Guna2TextBox txt_username;
         private Guna.UI2.WinForms.Guna2Button btn_back;
         private System.Windows.Forms.PictureBox pb_loading;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btn_showPassword;
         private Guna.UI2.WinForms.Guna2Button btn_hidePassword;
     }

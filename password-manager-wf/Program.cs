@@ -14,7 +14,7 @@ namespace password_manager_wf
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainApp());
+            Application.Run(new Login());
         }
     }
 }

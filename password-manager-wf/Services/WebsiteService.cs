@@ -1,5 +1,6 @@
 ﻿using password_manager_wf.Models.Responses;
 using password_manager_wf.Models;
+using password_manager_wf.Cache;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace password_manager_wf.Controlles
             List<Website> websites = null;
 
             //hacer la peticion y almacenar la respuesta que devolvio
+            client.DefaultRequestHeaders.Add("x-access-token", UserCache.token);
             var response = await client.GetAsync(baseURL);
             string jsonString = await response.Content.ReadAsStringAsync();
 

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Security.Cryptography;
 
 namespace password_manager_wf.Models
 {

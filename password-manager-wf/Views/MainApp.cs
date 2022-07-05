@@ -3,17 +3,26 @@ using System;
 using System.Net;
 using System.Drawing;
 using password_manager_wf.Views.Modals;
+using password_manager_wf.Cache;
 
 namespace password_manager_wf.Views
 {
     public partial class MainApp : Form
     {
         Form form = null;
+        Login _login;
 
-        public MainApp()
+        public MainApp(Login login)
         {
             InitializeComponent();
-            OpenChildForm(new Home());
+            //OpenChildForm(new Home());
+            GetUserInfo();
+            _login = login;
+        }
+
+        private void GetUserInfo()
+        {
+            lb_username.Text = UserCache.username;
         }
 
         private void OpenChildForm(Form childForm)
@@ -45,12 +54,8 @@ namespace password_manager_wf.Views
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pl_container_Paint(object sender, PaintEventArgs e)
-        {
-
+            this.Close();
+            _login.Show();
         }
     }
 }

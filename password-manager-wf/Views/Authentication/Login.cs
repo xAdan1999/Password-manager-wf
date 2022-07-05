@@ -1,12 +1,15 @@
-﻿using password_manager_wf.Views;
+﻿using password_manager_wf.Controlles;
+using password_manager_wf.Models;
+using password_manager_wf.Views;
 using System.Windows.Forms;
 using System;
-using password_manager_wf.Views.Modals;
 
 namespace password_manager_wf
 {
     public partial class Login : Form
     {
+        UserService userService = new UserService();
+
         public Login()
         {
             InitializeComponent();
@@ -29,11 +32,50 @@ namespace password_manager_wf
             txt_password.UseSystemPasswordChar = true;
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void ShowLoading()
         {
-            MainApp mainApp = new MainApp();
-            mainApp.Show();
-            this.Hide();
+            pb_loading.Enabled = true;
+            pb_loading.Visible = true;
+            btn_login.Enabled = false;
+            btn_login.Text = "Logging in...";
+        }
+
+        private void HideLoading()
+        {
+            pb_loading.Enabled = false;
+            pb_loading.Visible = false;
+            btn_login.Enabled = true;
+            btn_login.Text = "Login.";
+        }
+
+        private async void btn_login_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txt_email.Text) && !string.IsNullOrEmpty(txt_password.Text))
+            {
+                ShowLoading();
+
+                User user = new User();
+                user.email = txt_email.Text.Trim();
+                user.password = txt_password.Text.Trim();
+                bool success = await userService.Login(user);
+
+                if (success)
+                {
+                    MainApp mainApp = new MainApp(this);
+                    mainApp.Show();
+                    HideLoading();
+                    this.Hide();
+                }
+                else
+                {
+                    HideLoading();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Email and Password required", "Information",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void link_createAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
