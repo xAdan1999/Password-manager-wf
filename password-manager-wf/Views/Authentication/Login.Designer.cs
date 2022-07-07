@@ -48,11 +48,11 @@ namespace password_manager_wf
             // link_createAccount
             // 
             this.link_createAccount.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
-            this.link_createAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.link_createAccount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.link_createAccount.AutoSize = true;
             this.link_createAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.link_createAccount.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(140)))), ((int)(((byte)(242)))));
-            this.link_createAccount.Location = new System.Drawing.Point(539, 507);
+            this.link_createAccount.Location = new System.Drawing.Point(539, 483);
             this.link_createAccount.Name = "link_createAccount";
             this.link_createAccount.Size = new System.Drawing.Size(47, 17);
             this.link_createAccount.TabIndex = 6;
@@ -63,11 +63,11 @@ namespace password_manager_wf
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(388, 507);
+            this.label3.Location = new System.Drawing.Point(388, 483);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 17);
             this.label3.TabIndex = 11;
@@ -226,7 +226,7 @@ namespace password_manager_wf
             this.pb_loading.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pb_loading.Enabled = false;
             this.pb_loading.Image = ((System.Drawing.Image)(resources.GetObject("pb_loading.Image")));
-            this.pb_loading.Location = new System.Drawing.Point(474, 459);
+            this.pb_loading.Location = new System.Drawing.Point(474, 435);
             this.pb_loading.Name = "pb_loading";
             this.pb_loading.Size = new System.Drawing.Size(31, 31);
             this.pb_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

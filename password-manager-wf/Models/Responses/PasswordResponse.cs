@@ -1,14 +1,12 @@
 ﻿using System;
 
-namespace password_manager_wf.Models
+namespace password_manager_wf.Models.Responses
 {
-    public class Password
+    public class PasswordResponse
     {
-        //modelo para realizar insert  o update
+        //modelo para obtencion de datos
         public int id { get; set; }
-        public int userId { get; set; }
         public string title { get; set; }
-        public string websiteName { get; set; }
         public string usernameOrEmail { get; set; }
         public string passwordToSave { get; set; }
     }

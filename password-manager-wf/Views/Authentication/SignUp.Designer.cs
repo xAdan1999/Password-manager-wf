@@ -38,11 +38,13 @@ namespace password_manager_wf
             this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_username = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btn_back = new Guna.UI2.WinForms.Guna2Button();
             this.pb_loading = new System.Windows.Forms.PictureBox();
             this.btn_showPassword = new Guna.UI2.WinForms.Guna2Button();
             this.btn_hidePassword = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_back = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_loading)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_createAccount
@@ -203,30 +205,6 @@ namespace password_manager_wf
             this.txt_username.TabIndex = 3;
             this.txt_username.TextOffset = new System.Drawing.Point(3, 0);
             // 
-            // btn_back
-            // 
-            this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_back.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_back.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_back.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_back.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_back.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btn_back.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.ForeColor = System.Drawing.Color.DarkGray;
-            this.btn_back.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btn_back.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_back.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
-            this.btn_back.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btn_back.ImageSize = new System.Drawing.Size(15, 15);
-            this.btn_back.Location = new System.Drawing.Point(2, 2);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(115, 39);
-            this.btn_back.TabIndex = 32;
-            this.btn_back.Text = "Back";
-            this.btn_back.TextOffset = new System.Drawing.Point(0, -1);
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
-            // 
             // pb_loading
             // 
             this.pb_loading.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -248,12 +226,12 @@ namespace password_manager_wf
             this.btn_showPassword.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_showPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_showPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_showPassword.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btn_showPassword.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btn_showPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.btn_showPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_showPassword.ForeColor = System.Drawing.Color.White;
             this.btn_showPassword.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.btn_showPassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btn_showPassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btn_showPassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_showPassword.Image")));
             this.btn_showPassword.ImageSize = new System.Drawing.Size(17, 17);
             this.btn_showPassword.Location = new System.Drawing.Point(582, 280);
@@ -271,12 +249,12 @@ namespace password_manager_wf
             this.btn_hidePassword.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_hidePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_hidePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_hidePassword.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btn_hidePassword.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btn_hidePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.btn_hidePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_hidePassword.ForeColor = System.Drawing.Color.White;
             this.btn_hidePassword.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.btn_hidePassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btn_hidePassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btn_hidePassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_hidePassword.Image")));
             this.btn_hidePassword.ImageSize = new System.Drawing.Size(17, 17);
             this.btn_hidePassword.Location = new System.Drawing.Point(582, 280);
@@ -287,17 +265,52 @@ namespace password_manager_wf
             this.btn_hidePassword.Visible = false;
             this.btn_hidePassword.Click += new System.EventHandler(this.btn_hidePassword_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel1.Controls.Add(this.btn_back);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(989, 41);
+            this.panel1.TabIndex = 42;
+            // 
+            // btn_back
+            // 
+            this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_back.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_back.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_back.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_back.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_back.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btn_back.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.ForeColor = System.Drawing.Color.DarkGray;
+            this.btn_back.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btn_back.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_back.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
+            this.btn_back.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btn_back.ImageSize = new System.Drawing.Size(15, 15);
+            this.btn_back.Location = new System.Drawing.Point(3, 7);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btn_back.Size = new System.Drawing.Size(115, 26);
+            this.btn_back.TabIndex = 37;
+            this.btn_back.Text = "Back";
+            this.btn_back.TextOffset = new System.Drawing.Point(0, -1);
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(989, 588);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_showPassword);
             this.Controls.Add(this.btn_hidePassword);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.pb_loading);
-            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.label5);
@@ -309,8 +322,8 @@ namespace password_manager_wf
             this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUp";
-            this.Load += new System.EventHandler(this.SignUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_loading)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,9 +338,10 @@ namespace password_manager_wf
         private Guna.UI2.WinForms.Guna2TextBox txt_email;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txt_username;
-        private Guna.UI2.WinForms.Guna2Button btn_back;
         private System.Windows.Forms.PictureBox pb_loading;
         private Guna.UI2.WinForms.Guna2Button btn_showPassword;
         private Guna.UI2.WinForms.Guna2Button btn_hidePassword;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button btn_back;
     }
 }

@@ -52,19 +52,19 @@ namespace password_manager_wf
         {
             if(!string.IsNullOrEmpty(txt_email.Text) && !string.IsNullOrEmpty(txt_password.Text))
             {
-                ShowLoading();
-
                 User user = new User();
                 user.email = txt_email.Text.Trim();
                 user.password = txt_password.Text.Trim();
+
+                ShowLoading();
                 bool success = await userService.Login(user);
 
                 if (success)
                 {
-                    MainApp mainApp = new MainApp(this);
-                    mainApp.Show();
-                    HideLoading();
                     this.Hide();
+                    MainApp mainApp = new MainApp();
+                    mainApp.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
@@ -80,9 +80,10 @@ namespace password_manager_wf
 
         private void link_createAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SignUp signUp = new SignUp(this);
-            signUp.Show();
             this.Hide();
+            SignUp signUp = new SignUp();
+            signUp.ShowDialog();
+            this.Close();
         }
     }
 }

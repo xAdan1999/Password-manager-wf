@@ -1,5 +1,4 @@
-﻿using password_manager_wf.Models.Responses;
-using password_manager_wf.Controlles;
+﻿using password_manager_wf.Controlles;
 using password_manager_wf.Models;
 using password_manager_wf.Views;
 using System.Windows.Forms;
@@ -9,15 +8,12 @@ namespace password_manager_wf
 {
     public partial class SignUp : Form
     {
-        Login login;
-
         UserService service = new UserService();
 
-        public SignUp(Login login)
+        public SignUp()
         {
             InitializeComponent();
             txt_password.UseSystemPasswordChar = true;
-            this.login = login;
         }
 
         private void ShowLoading()
@@ -44,9 +40,10 @@ namespace password_manager_wf
 
                 if (success)
                 {
+                    this.Hide();
+                    MainApp mainApp = new MainApp();
+                    mainApp.ShowDialog();
                     this.Close();
-                    MainApp mainApp = new MainApp(new Login());
-                    mainApp.Show();
                 }
             }
             else
@@ -73,13 +70,10 @@ namespace password_manager_wf
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            login.Show();
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
             this.Close();
-        }
-
-        private void SignUp_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

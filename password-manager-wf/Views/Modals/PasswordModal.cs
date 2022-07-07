@@ -9,7 +9,6 @@ namespace password_manager_wf.Views.Modals
     public partial class PasswordModal : Form
     {
         PasswordService passwordService = new PasswordService();
-        WebsiteService websiteService = new WebsiteService();
 
         private int _id;
         private bool _updatePassword = false;
@@ -18,25 +17,19 @@ namespace password_manager_wf.Views.Modals
         {
             InitializeComponent();
             txt_password.UseSystemPasswordChar = true;
-            GetWebsites();
         }
 
         public PasswordModal(int id, bool updatePassword)
         {
             InitializeComponent();
-            GetWebsites();
+
+            btn_showPassword.Visible = false;
+            btn_hidePassword.Visible = true;
 
             this._id = id;
             this._updatePassword = updatePassword;
-            lb_title.Text = "Update website";
+            lb_title.Text = "Update password";
             btn_save.Text = "Update";
-        }
-
-        private async void GetWebsites()
-        {
-            cb_website.DataSource = await websiteService.GetWebsites();
-            cb_website.DisplayMember = "websiteName";
-            cb_website.ValueMember = "id";
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -68,7 +61,7 @@ namespace password_manager_wf.Views.Modals
                 {
                     Password password = new Password();
                     password.userId = UserCache.userId;
-                    password.websiteId = Convert.ToInt32(cb_website.SelectedValue);
+                    password.title = txt_title.Text.Trim();
                     password.usernameOrEmail = txt_usernameOrEmail.Text.Trim();
                     password.passwordToSave = txt_password.Text.Trim();
 
@@ -85,7 +78,7 @@ namespace password_manager_wf.Views.Modals
             {
                 Password password = new Password();
                 password.id = this._id;
-                password.websiteId = Convert.ToInt32(cb_website.SelectedValue);
+                password.title = txt_title.Text.Trim();
                 password.usernameOrEmail = txt_usernameOrEmail.Text.Trim();
                 password.passwordToSave = txt_password.Text.Trim();
 
