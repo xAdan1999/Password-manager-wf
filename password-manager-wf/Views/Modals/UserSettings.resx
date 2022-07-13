@@ -117,20 +117,48 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="close-session" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close-session.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>41</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gcBEwEEBkMBOwAAAb5JREFU
+        SEvtlEtOAkEQhsfHTtcGFyqeQFHExxF8HEA5gNF4B1YEGOAChigi0YQDGOIN8Aa+YiJu1IgHAB3/f6hO
+        mmKIRDea8Cdf0l31V3VP0cEZ6P8okUiMp9PpacK1hH8uNBlFsy3XdU8zmcwD8BSMlZDfpFfKvpfneUMo
+        jINbaWTTCogReuPSoreSyeQkjJdWoaGUSqUilUplBLcdxj4KylbeUMUXhaRdp5BYwEiedBFiu2LpEnJ7
+        2g/q6DUvlrZwuyUk3pWRlMTiZLPZVeyLoABWJOxgfQZ0XYMX9g0onEXgVRl8jAk3XcO+aeVaqFtmDuuY
+        Fbd5xsXDHM1VQJI0OXM54DggX2COHqw/Vc5Q4w1qKmj44A/KJlhzLB15Hsocnyj29tfZ1Dj/MBYvKmGI
+        ygEcg92k2c+IcrncDD08ZBGBhjKQsm+A5CEcgiPTnML+XLw2b/BHxNIWnxYSdWUk+2LpEnIHykseMb45
+        sXQKh4RgqKoCwqcY428iM+dYgm5+ga+bkHa9hRvswHyjig1dfxe42DXYlvL+xOeHgzbACZrc66bgDhTR
+        eN08518Jnz6Wz+enCNcSHujPy3G+AABoSM59tv6kAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="close-session-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close-session-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="resource.Image1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gcLEDIxyWD+FQAAAQZJREFU
+        SEvtls0NgkAQhYmxAzogkpjYBAfvtgQXKlDLsAEvetMuvBmvNIDvsbOg6yw/EeOFL3mJM29nHxpdN7CU
+        ZRlDa0eReIkm8SKIa0PWKjD3kEYqvop4qanKO7Rk7w00+eQ+hgSQzxA0+HZ9DA0gD2hFrwLF2AGkCcGL
+        XwQQflxhV0Amm5w0iZdBPpKuAG4050Ya9KAzF3roDCA36OgRvTZ6BXzDFNDJ/wIO0AZyT1efuJYzLmrA
+        BZpBC0jbTBPXcuYKvaIG5PIjKkzZi0JmclPWqAGt548PmXHPpSmgoS3A/cscMyBmn8bO1BVjBWzZq0HD
+        XlvsVcX9rrdKZuwVxjx5EARPCX+mgG3yFakAAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="reload" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="reload-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reload-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn_updateUsername.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gcLEDEd0JXBNQAAASNJREFU
+        SEvtlk8OwVAQhxtxAzcQEolLWNg7Utm8/tviGC5gw45b2ImtCzBf89TrM20RYmOSL21n5je/V3kewS3S
+        NO1nWTZ2iaKoS02uIw1b69JrjOnwrIYMXyZJclGYUlfyObY2tc9HMRmQKwUrvwkUXjGARxNe1WnwedUA
+        TnEcD6nl8QUDuJt8yQD4uDq1BrKKmR2y0aBGj9yremY3vcEmDMM2g7SgJj1bT1PwjAEcZJVrDWpeb4ln
+        Dd7mb9DI7wxkh6yEiX+6VkEvGn+OaiCNO9nfLcn3tGEa9KIR/d6dpRoIhi+RXM9evo6z1Rg3X2VQe/5U
+        YTWlc+lvUKLSQPnJ/JgBs8lTWDiFjxjI8Dm5InCzezr/q+Lv9SbQoOW+WHkQBFdhLtv2YDb3hwAAAABJ
+        RU5ErkJggg==
+</value>
   </data>
 </root>

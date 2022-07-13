@@ -1,6 +1,5 @@
 ﻿using password_manager_wf.Models.Responses;
 using password_manager_wf.Models;
-using password_manager_wf.Cache;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +12,9 @@ namespace password_manager_wf.Controlles
 {
     public class PasswordService
     {
-        HttpClient client = new HttpClient();
+        HttpClient client = new HttpClient(); 
 
-        string baseURL = "http://localhost:3000/api/passwords";
+        string baseURL = "http://localhost:3000/api/passwords"; 
 
         //metodo para traer las contraseñas
         public async Task<List<PasswordResponse>> GetPasswords()
@@ -29,7 +28,7 @@ namespace password_manager_wf.Controlles
                 //client.DefaultRequestHeaders.Add("Authorization", UserCache.token);
 
                 //hacer la solicitud y capturar la respuesta
-                var response = await client.GetAsync(baseURL + $"/{UserCache.userId}");
+                var response = await client.GetAsync(baseURL + $"/{Properties.Settings.Default.userId}");
 
                 //convertir el json que responde el servidor en string para poder deserializarlo
                 string jsonString = await response.Content.ReadAsStringAsync();
@@ -78,7 +77,7 @@ namespace password_manager_wf.Controlles
                 //client.DefaultRequestHeaders.Add("Authorization", UserCache.token);
 
                 //hacer la solicitud y capturar la respuesta                params                   body
-                var response = await client.PostAsync(baseURL + $"/{UserCache.userId}", data);
+                var response = await client.PostAsync(baseURL + $"/{Properties.Settings.Default.userId}", data);
 
                 //convertir el json que responde el servidor en string para poder deserializarlo
                 string jsonString = await response.Content.ReadAsStringAsync();

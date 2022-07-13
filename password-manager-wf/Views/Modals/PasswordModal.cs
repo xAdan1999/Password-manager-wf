@@ -1,6 +1,5 @@
 ﻿using password_manager_wf.Controlles;
 using password_manager_wf.Models;
-using password_manager_wf.Cache;
 using System.Windows.Forms;
 using System;
 
@@ -22,12 +21,14 @@ namespace password_manager_wf.Views.Modals
         public PasswordModal(int id, bool updatePassword)
         {
             InitializeComponent();
-
-            btn_showPassword.Visible = false;
-            btn_hidePassword.Visible = true;
+            txt_password.UseSystemPasswordChar = true;
 
             this._id = id;
             this._updatePassword = updatePassword;
+        }
+
+        private void PasswordModal_Load(object sender, EventArgs e)
+        {
             lb_title.Text = "Update password";
             btn_save.Text = "Update";
         }
@@ -35,6 +36,14 @@ namespace password_manager_wf.Views.Modals
         private void btn_save_Click(object sender, EventArgs e)
         {
             InsertUpdate();
+        }
+
+        private void txt_title_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                InsertUpdate();
+            }
         }
 
         private void txt_usernameOrEmail_KeyDown(object sender, KeyEventArgs e)
@@ -55,40 +64,45 @@ namespace password_manager_wf.Views.Modals
 
         private async void InsertUpdate()
         {
-            if (_updatePassword == false)
+            //verificar que ningun campo este vacio
+            if ( !string.IsNullOrEmpty(txt_title.Text.Trim())
+            && !string.IsNullOrEmpty(txt_usernameOrEmail.Text.Trim())
+            && !string.IsNullOrEmpty(txt_password.Text.Trim()))
             {
-                if (!string.IsNullOrEmpty(txt_usernameOrEmail.Text.Trim()) && !string.IsNullOrEmpty(txt_password.Text.Trim()))
-                {
-                    Password password = new Password();
-                    password.userId = UserCache.userId;
-                    password.title = txt_title.Text.Trim();
-                    password.usernameOrEmail = txt_usernameOrEmail.Text.Trim();
-                    password.passwordToSave = txt_password.Text.Trim();
-
-                    bool success = await passwordService.InsertPassword(password);
-
-                    if (success)
-                    {
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
-                    }
-                }
-            }
-            else if (_updatePassword == true)
-            {
+                //crear el objeto con los valoes base
                 Password password = new Password();
-                password.id = this._id;
                 password.title = txt_title.Text.Trim();
                 password.usernameOrEmail = txt_usernameOrEmail.Text.Trim();
                 password.passwordToSave = txt_password.Text.Trim();
 
-                bool success = await passwordService.UpdatePassword(password);
+                //para manejar la respuesta
+                bool success;
 
+                if (_updatePassword == false)
+                {
+                    /*como se va a agregar, construir el objeto con el userId
+                     * ya que se agregara el registro para ese usuario*/
+                    password.userId = Properties.Settings.Default.userId;
+                    success = await passwordService.InsertPassword(password);
+                }
+                else
+                {
+                    /*si se actualiza, contruir el objeto solo añadiendo el id del registro*/
+                    password.id = this._id;
+                    success = await passwordService.UpdatePassword(password);
+                }
+
+                //evaluar la respuesta
                 if (success)
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all fields!", "Information",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -114,10 +128,9 @@ namespace password_manager_wf.Views.Modals
             this.Close();
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
         }
     }
 }

@@ -16,6 +16,22 @@ namespace password_manager_wf
             txt_password.UseSystemPasswordChar = true;
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+            GetSession();
+        }
+
+        private void GetSession()
+        {
+            if (Properties.Settings.Default.success == true)
+            {
+                this.Hide();
+                MainApp mainApp = new MainApp();
+                mainApp.ShowDialog();
+                this.Close();
+            }
+        }
+
         private void btn_showPassword_Click(object sender, EventArgs e)
         {
             txt_password.Focus();
@@ -32,32 +48,38 @@ namespace password_manager_wf
             txt_password.UseSystemPasswordChar = true;
         }
 
-        private void ShowLoading()
+        private void txt_email_KeyDown(object sender, KeyEventArgs e)
         {
-            pb_loading.Enabled = true;
-            pb_loading.Visible = true;
-            btn_login.Enabled = false;
-            btn_login.Text = "Logging in...";
+            if (e.KeyData == Keys.Enter)
+            {
+                VerifyUser();
+            }
         }
 
-        private void HideLoading()
+        private void txt_password_KeyDown(object sender, KeyEventArgs e)
         {
-            pb_loading.Enabled = false;
-            pb_loading.Visible = false;
-            btn_login.Enabled = true;
-            btn_login.Text = "Login.";
+            if (e.KeyData == Keys.Enter)
+            {
+                VerifyUser();
+            }
         }
 
-        private async void btn_login_Click(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txt_email.Text) && !string.IsNullOrEmpty(txt_password.Text))
+            VerifyUser();
+        }
+
+        private async void VerifyUser()
+        {
+            if (!string.IsNullOrEmpty(txt_email.Text) && !string.IsNullOrEmpty(txt_password.Text))
             {
                 User user = new User();
                 user.email = txt_email.Text.Trim();
                 user.password = txt_password.Text.Trim();
 
                 ShowLoading();
-                bool success = await userService.Login(user);
+                bool success =
+                await userService.Login(user);
 
                 if (success)
                 {
@@ -66,10 +88,7 @@ namespace password_manager_wf
                     mainApp.ShowDialog();
                     this.Close();
                 }
-                else
-                {
-                    HideLoading();
-                }
+                HideLoading();
             }
             else
             {
@@ -78,12 +97,33 @@ namespace password_manager_wf
             }
         }
 
+        private void ShowLoading()
+        {
+            pb_loading.Enabled = true;
+            pb_loading.Visible = true;
+            btn_login.Enabled = false;
+            btn_login.Text = "Wait...";
+        }
+
+        private void HideLoading()
+        {
+            pb_loading.Enabled = false;
+            pb_loading.Visible = false;
+            btn_login.Enabled = true;
+            btn_login.Text = "Login";
+        }
+
         private void link_createAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             SignUp signUp = new SignUp();
             signUp.ShowDialog();
             this.Close();
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

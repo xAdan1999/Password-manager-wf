@@ -16,17 +16,39 @@ namespace password_manager_wf
             txt_password.UseSystemPasswordChar = true;
         }
 
-        private void ShowLoading()
+        private void btn_createAccount_Click(object sender, EventArgs e)
         {
-            pb_loading.Enabled = true;
-            pb_loading.Visible = true;
-            btn_createAccount.Enabled = false;
-            btn_createAccount.Text = "Creating account...";
+            CreateAccount();
         }
 
-        private async void btn_createAccount_Click(object sender, EventArgs e)
+
+        private void txt_email_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_email.Text.Trim())
+            if (e.KeyData == Keys.Enter)
+            {
+                CreateAccount();
+            }
+        }
+
+        private void txt_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                CreateAccount();
+            }
+        }
+
+        private void txt_username_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                CreateAccount();
+            }
+        }
+
+        private async void CreateAccount()
+        {
+            if ( !string.IsNullOrEmpty(txt_email.Text.Trim())
             && !string.IsNullOrEmpty(txt_password.Text.Trim())
             && !string.IsNullOrEmpty(txt_username.Text.Trim()))
             {
@@ -45,11 +67,29 @@ namespace password_manager_wf
                     mainApp.ShowDialog();
                     this.Close();
                 }
+                HideLoading();
             }
             else
             {
-                MessageBox.Show("Please fill all fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please fill all fields!", "Information",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ShowLoading()
+        {
+            pb_loading.Enabled = true;
+            pb_loading.Visible = true;
+            btn_createAccount.Enabled = false;
+            btn_createAccount.Text = "Creating account...";
+        }
+
+        private void HideLoading()
+        {
+            pb_loading.Enabled = false;
+            pb_loading.Visible = false;
+            btn_createAccount.Enabled = true;
+            btn_createAccount.Text = "Create account";
         }
 
         private void btn_showPassword_Click(object sender, EventArgs e)
@@ -68,7 +108,7 @@ namespace password_manager_wf
             txt_password.UseSystemPasswordChar = true;
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
+        private void SignUp_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
             Login login = new Login();
