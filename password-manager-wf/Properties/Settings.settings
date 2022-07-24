@@ -6,13 +6,19 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="username" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">user</Value>
     </Setting>
     <Setting Name="token" Type="System.String" Scope="User">
       <Value Profile="(Default)">token</Value>
     </Setting>
     <Setting Name="success" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="passwordsURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:3000/api/passwords</Value>
+    </Setting>
+    <Setting Name="usersURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:3000/api/users</Value>
     </Setting>
   </Settings>
 </SettingsFile>

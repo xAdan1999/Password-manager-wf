@@ -9,5 +9,7 @@ namespace password_manager_wf.Models.Responses
         public string title { get; set; }
         public string usernameOrEmail { get; set; }
         public string passwordToSave { get; set; }
+        public string created { get; set; }
+        public string modified { get; set; }
     }
 }

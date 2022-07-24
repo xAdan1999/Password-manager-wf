@@ -13,7 +13,7 @@ namespace password_manager_wf.Controlles
     {
         HttpClient client = new HttpClient();
 
-        string baseURL = "http://localhost:3000/api/users";
+        string baseURL = Properties.Settings.Default.usersURL;
 
         public async Task<bool> Login(User user)
         {

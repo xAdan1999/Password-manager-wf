@@ -23,14 +23,36 @@ namespace password_manager_wf.Views.Modals
             InitializeComponent();
             txt_password.UseSystemPasswordChar = true;
 
+            lb_title.Text = "Password details";
+            btn_deletePassword.Visible = true;
+            btn_save.Text = "Update";
+
             this._id = id;
             this._updatePassword = updatePassword;
         }
 
-        private void PasswordModal_Load(object sender, EventArgs e)
+        private void btn_deletePassword_Click(object sender, EventArgs e)
         {
-            lb_title.Text = "Update password";
-            btn_save.Text = "Update";
+            using (Deleted deletePassword = new Deleted("Deleted","This item will be delete, are you sure?"))
+            {
+                var result = deletePassword.ShowDialog();
+
+                if (result == DialogResult.Yes)
+                {
+                    Delete();
+                }
+            }
+        }
+
+        private async void Delete()
+        {
+            bool succes = await passwordService.DeletePassword(_id);
+
+            if (succes)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -59,6 +81,20 @@ namespace password_manager_wf.Views.Modals
             if (e.KeyData == Keys.Enter)
             {
                 InsertUpdate();
+            }
+        }
+
+        private void txt_password_IconRightClick(object sender, EventArgs e)
+        {
+            if (txt_password.UseSystemPasswordChar == true)
+            {
+                txt_password.IconRight = Properties.Resources.hide_password;
+                txt_password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_password.IconRight = Properties.Resources.show_password;
+                txt_password.UseSystemPasswordChar = true;
             }
         }
 
@@ -106,31 +142,10 @@ namespace password_manager_wf.Views.Modals
             }
         }
 
-        private void btn_showPassword_Click(object sender, EventArgs e)
-        {
-            txt_password.Focus();
-            btn_showPassword.Visible = false;
-            btn_hidePassword.Visible = true;
-            txt_password.UseSystemPasswordChar = false;
-        }
-
-        private void btn_hidePassword_Click(object sender, EventArgs e)
-        {
-            txt_password.Focus();
-            btn_showPassword.Visible = true;
-            btn_hidePassword.Visible = false;
-            txt_password.UseSystemPasswordChar = true;
-        }
-
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
-        }
-
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

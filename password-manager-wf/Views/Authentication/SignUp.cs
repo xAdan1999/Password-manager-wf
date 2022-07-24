@@ -21,7 +21,6 @@ namespace password_manager_wf
             CreateAccount();
         }
 
-
         private void txt_email_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
@@ -35,6 +34,20 @@ namespace password_manager_wf
             if (e.KeyData == Keys.Enter)
             {
                 CreateAccount();
+            }
+        }
+
+        private void txt_password_IconRightClick(object sender, EventArgs e)
+        {
+            if (txt_password.UseSystemPasswordChar == true)
+            {
+                txt_password.IconRight = Properties.Resources.hide_password;
+                txt_password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_password.IconRight = Properties.Resources.show_password;
+                txt_password.UseSystemPasswordChar = true;
             }
         }
 
@@ -53,6 +66,7 @@ namespace password_manager_wf
             && !string.IsNullOrEmpty(txt_username.Text.Trim()))
             {
                 User user = new User();
+
                 user.email = txt_email.Text.Trim();
                 user.password = txt_password.Text.Trim();
                 user.username = txt_username.Text.Trim();
@@ -78,34 +92,14 @@ namespace password_manager_wf
 
         private void ShowLoading()
         {
-            pb_loading.Enabled = true;
-            pb_loading.Visible = true;
             btn_createAccount.Enabled = false;
             btn_createAccount.Text = "Creating account...";
         }
 
         private void HideLoading()
         {
-            pb_loading.Enabled = false;
-            pb_loading.Visible = false;
             btn_createAccount.Enabled = true;
             btn_createAccount.Text = "Create account";
-        }
-
-        private void btn_showPassword_Click(object sender, EventArgs e)
-        {
-            txt_password.Focus();
-            btn_showPassword.Visible = false;
-            btn_hidePassword.Visible = true;
-            txt_password.UseSystemPasswordChar = false;
-        }
-
-        private void btn_hidePassword_Click(object sender, EventArgs e)
-        {
-            txt_password.Focus();
-            btn_showPassword.Visible = true;
-            btn_hidePassword.Visible = false;
-            txt_password.UseSystemPasswordChar = true;
         }
 
         private void SignUp_FormClosed(object sender, FormClosedEventArgs e)

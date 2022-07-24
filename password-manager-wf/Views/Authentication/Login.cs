@@ -21,6 +21,7 @@ namespace password_manager_wf
             GetSession();
         }
 
+        //metodo para comprobar si hay una sesion guardada
         private void GetSession()
         {
             if (Properties.Settings.Default.success == true)
@@ -30,22 +31,6 @@ namespace password_manager_wf
                 mainApp.ShowDialog();
                 this.Close();
             }
-        }
-
-        private void btn_showPassword_Click(object sender, EventArgs e)
-        {
-            txt_password.Focus();
-            btn_showPassword.Visible = false;
-            btn_hidePassword.Visible = true;
-            txt_password.UseSystemPasswordChar = false;
-        }
-
-        private void btn_hidePassword_Click(object sender, EventArgs e)
-        {
-            txt_password.Focus();
-            btn_showPassword.Visible = true;
-            btn_hidePassword.Visible = false;
-            txt_password.UseSystemPasswordChar = true;
         }
 
         private void txt_email_KeyDown(object sender, KeyEventArgs e)
@@ -64,6 +49,20 @@ namespace password_manager_wf
             }
         }
 
+        private void txt_password_IconRightClick(object sender, EventArgs e)
+        {
+            if(txt_password.UseSystemPasswordChar == true)
+            {
+                txt_password.IconRight = Properties.Resources.hide_password;
+                txt_password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_password.IconRight = Properties.Resources.show_password;
+                txt_password.UseSystemPasswordChar = true;
+            }
+        }
+
         private void btn_login_Click(object sender, EventArgs e)
         {
             VerifyUser();
@@ -78,8 +77,7 @@ namespace password_manager_wf
                 user.password = txt_password.Text.Trim();
 
                 ShowLoading();
-                bool success =
-                await userService.Login(user);
+                bool success = await userService.Login(user);
 
                 if (success)
                 {
@@ -99,16 +97,12 @@ namespace password_manager_wf
 
         private void ShowLoading()
         {
-            pb_loading.Enabled = true;
-            pb_loading.Visible = true;
             btn_login.Enabled = false;
             btn_login.Text = "Wait...";
         }
 
         private void HideLoading()
         {
-            pb_loading.Enabled = false;
-            pb_loading.Visible = false;
             btn_login.Enabled = true;
             btn_login.Text = "Login";
         }

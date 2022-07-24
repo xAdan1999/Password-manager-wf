@@ -12,9 +12,9 @@ namespace password_manager_wf.Controlles
 {
     public class PasswordService
     {
-        HttpClient client = new HttpClient(); 
+        HttpClient client = new HttpClient();
 
-        string baseURL = "http://localhost:3000/api/passwords"; 
+        string baseURL = Properties.Settings.Default.passwordsURL;
 
         //metodo para traer las contraseñas
         public async Task<List<PasswordResponse>> GetPasswords()

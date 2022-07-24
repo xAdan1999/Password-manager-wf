@@ -37,7 +37,7 @@ namespace password_manager_wf.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("user")]
         public string username {
             get {
                 return ((string)(this["username"]));
@@ -68,6 +68,30 @@ namespace password_manager_wf.Properties {
             }
             set {
                 this["success"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3000/api/passwords")]
+        public string passwordsURL {
+            get {
+                return ((string)(this["passwordsURL"]));
+            }
+            set {
+                this["passwordsURL"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3000/api/users")]
+        public string usersURL {
+            get {
+                return ((string)(this["usersURL"]));
+            }
+            set {
+                this["usersURL"] = value;
             }
         }
     }

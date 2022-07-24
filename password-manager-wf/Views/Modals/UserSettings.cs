@@ -19,17 +19,17 @@ namespace password_manager_wf.Views.Modals
             txt_username.Text = Properties.Settings.Default.username;
         }
 
-        private void btn_updateUsername_Click(object sender, EventArgs e)
-        {
-            UpdateUsername();
-        }
-
         private void txt_username_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
             {
                 UpdateUsername();
             }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            UpdateUsername();
         }
 
         private async void UpdateUsername()
@@ -44,12 +44,12 @@ namespace password_manager_wf.Views.Modals
 
                 if (success)
                 {
+                    Properties.Settings.Default.username = txt_username.Text;
+                    Properties.Settings.Default.Save();
+
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
-
-                Properties.Settings.Default.username = txt_username.Text;
-                Properties.Settings.Default.Save();
             }
             else
             {
@@ -60,7 +60,20 @@ namespace password_manager_wf.Views.Modals
 
         private void btn_deleteAccount_Click(object sender, EventArgs e)
         {
-            DeleteAccount();
+            using (Deleted deleteAccount = new Deleted("Deleted Account","Your account will be deleted, are you sure?"))
+            {
+                var result = deleteAccount.ShowDialog();
+
+                if (result == DialogResult.Yes)
+                {
+                    DeleteAccount();
+                }
+            }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            DeleteSession();
         }
 
         private async void DeleteAccount()
@@ -81,6 +94,33 @@ namespace password_manager_wf.Views.Modals
                 login.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void DeleteSession()
+        {
+            try
+            {
+                Properties.Settings.Default.success = false;
+                Properties.Settings.Default.userId = 0;
+                Properties.Settings.Default.username = string.Empty;
+                Properties.Settings.Default.token = string.Empty;
+                Properties.Settings.Default.Save();
+
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Information",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_cancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
