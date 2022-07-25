@@ -24,7 +24,7 @@ namespace password_manager_wf
         //metodo para comprobar si hay una sesion guardada
         private void GetSession()
         {
-            if (Properties.Settings.Default.success == true)
+            if (Properties.Settings.Default.loggedIn == true)
             {
                 this.Hide();
                 MainApp mainApp = new MainApp();

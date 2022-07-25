@@ -1,4 +1,5 @@
-﻿using password_manager_wf.Controlles;
+﻿using password_manager_wf.Views.Tools;
+using password_manager_wf.Controlles;
 using password_manager_wf.Models;
 using System.Windows.Forms;
 using System;
@@ -8,6 +9,8 @@ namespace password_manager_wf.Views.Modals
     public partial class UserSettings : Form
     {
         UserService userService = new UserService();
+
+        public string type;
 
         public UserSettings()
         {
@@ -46,23 +49,22 @@ namespace password_manager_wf.Views.Modals
                 {
                     Properties.Settings.Default.username = txt_username.Text;
                     Properties.Settings.Default.Save();
-
-                    this.DialogResult = DialogResult.OK;
+                    this.type = "update";
                     this.Close();
                 }
             }
             else
             {
-                MessageBox.Show("Please enter an username", "Information",
+                MessageBox.Show("Please enter a username", "Information",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btn_deleteAccount_Click(object sender, EventArgs e)
         {
-            using (Deleted deleteAccount = new Deleted("Deleted Account","Your account will be deleted, are you sure?"))
+            using (Message deleteAccount = new Message("Deleted Account","Your account will be deleted, are you sure?"))
             {
-                var result = deleteAccount.ShowDialog();
+                var result = ModalBackgroud.CreateBackground(deleteAccount);
 
                 if (result == DialogResult.Yes)
                 {
@@ -73,53 +75,47 @@ namespace password_manager_wf.Views.Modals
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            DeleteSession();
+            using (Message logout = new Message("Log out", "You want to close session?"))
+            {
+                var result = ModalBackgroud.CreateBackground(logout);
+
+                if (result == DialogResult.Yes)
+                {
+                    DeleteSession();
+                }
+            }
         }
 
         private async void DeleteAccount()
         {
-            int id = Properties.Settings.Default.userId;
-            bool success = await userService.DeleteUser(id);
+            bool success = await userService.DeleteUser(Properties.Settings.Default.userId);
 
             if (success)
             {
-                Properties.Settings.Default.success = false;
+                Properties.Settings.Default.loggedIn = false;
                 Properties.Settings.Default.userId = 0;
                 Properties.Settings.Default.username = string.Empty;
                 Properties.Settings.Default.token = string.Empty;
                 Properties.Settings.Default.Save();
-
-                this.Hide();
-                Login login = new Login();
-                login.ShowDialog();
+                this.type = "deleted account";
                 this.Close();
             }
         }
 
         private void DeleteSession()
         {
-            try
-            {
-                Properties.Settings.Default.success = false;
-                Properties.Settings.Default.userId = 0;
-                Properties.Settings.Default.username = string.Empty;
-                Properties.Settings.Default.token = string.Empty;
-                Properties.Settings.Default.Save();
-
-                this.Hide();
-                Login login = new Login();
-                login.ShowDialog();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Information",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            Properties.Settings.Default.loggedIn = false;
+            Properties.Settings.Default.userId = 0;
+            Properties.Settings.Default.username = string.Empty;
+            Properties.Settings.Default.token = string.Empty;
+            Properties.Settings.Default.Save();
+            this.type = "logout";
+            this.Close();
         }
 
         private void btn_cancel_Click_1(object sender, EventArgs e)
         {
+            this.type = "close";
             this.Close();
         }
     }

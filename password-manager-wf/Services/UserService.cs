@@ -11,9 +11,11 @@ namespace password_manager_wf.Controlles
 {
     public class UserService
     {
-        HttpClient client = new HttpClient();
+        //obtener la url base
+        readonly string baseURL = Properties.Settings.Default.usersURL;
 
-        string baseURL = Properties.Settings.Default.usersURL;
+        //recuperar el token almacenado para dar autorizaciones
+        readonly string token = Properties.Settings.Default.token;
 
         public async Task<bool> Login(User user)
         {
@@ -35,6 +37,9 @@ namespace password_manager_wf.Controlles
 
             try
             {
+                //para hacer peticiones
+                HttpClient client = new HttpClient();
+
                 //serializar el objeto recibido
                 string json = JsonConvert.SerializeObject(user);
 
@@ -70,6 +75,7 @@ namespace password_manager_wf.Controlles
 
                 //desechar la respuesta una vez utilizada
                 response.Dispose();
+                client.Dispose();
             }
             catch (Exception ex)
             {
@@ -88,14 +94,18 @@ namespace password_manager_wf.Controlles
 
             try
             {
+                //para hacer peticiones
+                HttpClient client = new HttpClient();
+
+                //enviar el token para poder autorizar la obtencion de las contraseñas
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("authorization", token);
+
                 //serializar el objeto recibido
                 string json = JsonConvert.SerializeObject(user);
 
                 //configurar la solicitud
                 var data = new StringContent(json, Encoding.UTF8, "application/json");
-
-                //enviar el token para autorizar la actualizacion
-                //client.DefaultRequestHeaders.Add("Authorization", UserCache.token);
 
                 //hacer la solicitud y capturar la respuesta
                 var response = await client.PutAsync(baseURL + $"/{user.id}", data);
@@ -123,6 +133,7 @@ namespace password_manager_wf.Controlles
 
                 //desechar la respuesta una vez utilizada
                 response.Dispose();
+                client.Dispose();
             }
             catch (Exception ex)
             {
@@ -141,8 +152,12 @@ namespace password_manager_wf.Controlles
 
             try
             {
-                //enviar el token para autorizar la actualizacion
-                //client.DefaultRequestHeaders.Add("Authorization", UserCache.token);
+                //para hacer peticiones
+                HttpClient client = new HttpClient();
+
+                //enviar el token para poder autorizar la obtencion de las contraseñas
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("authorization", token);
 
                 //hacer la solicitud y capturar la respuesta
                 var response = await client.DeleteAsync(baseURL + $"/{id}");
@@ -168,6 +183,7 @@ namespace password_manager_wf.Controlles
 
                 //desechar la respuesta una vez utilizada
                 response.Dispose();
+                client.Dispose();
             }
             catch (Exception ex)
             {
@@ -184,8 +200,8 @@ namespace password_manager_wf.Controlles
         {
             try
             {
-                Properties.Settings.Default.success = userResponse.success;
-                Properties.Settings.Default.userId = userResponse.userId;
+                Properties.Settings.Default.loggedIn = userResponse.logged_in;
+                Properties.Settings.Default.userId = userResponse.user_id;
                 Properties.Settings.Default.username = userResponse.username;
                 Properties.Settings.Default.token = userResponse.token;
                 Properties.Settings.Default.Save();

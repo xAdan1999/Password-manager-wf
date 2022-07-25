@@ -1,7 +1,7 @@
 ﻿
 namespace password_manager_wf.Views.Modals
 {
-    partial class Deleted
+    partial class Message
     {
         /// <summary>
         /// Required designer variable.
@@ -58,7 +58,7 @@ namespace password_manager_wf.Views.Modals
             this.btn_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.ForeColor = System.Drawing.Color.Gray;
             this.btn_cancel.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(57, 138);
+            this.btn_cancel.Location = new System.Drawing.Point(60, 138);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(120, 39);
             this.btn_cancel.TabIndex = 8;
@@ -81,7 +81,7 @@ namespace password_manager_wf.Views.Modals
             this.btn_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(48)))), ((int)(((byte)(86)))));
             this.btn_delete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(48)))), ((int)(((byte)(86)))));
             this.btn_delete.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(188, 138);
+            this.btn_delete.Location = new System.Drawing.Point(191, 138);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(124, 39);
             this.btn_delete.TabIndex = 7;

@@ -3,9 +3,9 @@ using System;
 
 namespace password_manager_wf.Views.Modals
 {
-    public partial class Deleted : Form
+    public partial class Message : Form
     {
-        public Deleted(string title, string message)
+        public Message(string title, string message)
         {
             InitializeComponent();
             lb_title.Text = title;

@@ -64,10 +64,10 @@ namespace password_manager_wf.Properties {
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool loggedIn {
             get {
-                return ((bool)(this["success"]));
+                return ((bool)(this["loggedIn"]));
             }
             set {
-                this["success"] = value;
+                this["loggedIn"] = value;
             }
         }
         

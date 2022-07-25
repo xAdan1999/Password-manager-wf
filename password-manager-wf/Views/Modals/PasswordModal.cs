@@ -1,4 +1,5 @@
-﻿using password_manager_wf.Controlles;
+﻿using password_manager_wf.Views.Tools;
+using password_manager_wf.Controlles;
 using password_manager_wf.Models;
 using System.Windows.Forms;
 using System;
@@ -33,9 +34,9 @@ namespace password_manager_wf.Views.Modals
 
         private void btn_deletePassword_Click(object sender, EventArgs e)
         {
-            using (Deleted deletePassword = new Deleted("Deleted","This item will be delete, are you sure?"))
+            using (Message deletePassword = new Message("Deleted","This item will be delete, are you sure?"))
             {
-                var result = deletePassword.ShowDialog();
+                var result = ModalBackgroud.CreateBackground(deletePassword);
 
                 if (result == DialogResult.Yes)
                 {
@@ -108,8 +109,8 @@ namespace password_manager_wf.Views.Modals
                 //crear el objeto con los valoes base
                 Password password = new Password();
                 password.title = txt_title.Text.Trim();
-                password.usernameOrEmail = txt_usernameOrEmail.Text.Trim();
-                password.passwordToSave = txt_password.Text.Trim();
+                password.username_or_email = txt_usernameOrEmail.Text.Trim();
+                password.password = txt_password.Text.Trim();
 
                 //para manejar la respuesta
                 bool success;
@@ -118,7 +119,7 @@ namespace password_manager_wf.Views.Modals
                 {
                     /*como se va a agregar, construir el objeto con el userId
                      * ya que se agregara el registro para ese usuario*/
-                    password.userId = Properties.Settings.Default.userId;
+                    password.user_id = Properties.Settings.Default.userId;
                     success = await passwordService.InsertPassword(password);
                 }
                 else

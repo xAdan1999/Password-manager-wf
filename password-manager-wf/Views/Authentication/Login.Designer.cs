@@ -225,7 +225,7 @@ namespace password_manager_wf
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MinimumSize = new System.Drawing.Size(989, 597);
+            this.MinimumSize = new System.Drawing.Size(1005, 636);
             this.Name = "Login";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

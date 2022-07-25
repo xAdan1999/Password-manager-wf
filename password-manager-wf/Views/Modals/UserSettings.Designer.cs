@@ -33,12 +33,12 @@ namespace password_manager_wf.Views.Modals
             this.label2 = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
             this.btn_logout = new Guna.UI2.WinForms.Guna2Button();
             this.txt_username = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_deleteAccount = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
+            this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label2
@@ -47,7 +47,7 @@ namespace password_manager_wf.Views.Modals
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(41, 115);
+            this.label2.Location = new System.Drawing.Point(41, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 40;
@@ -72,28 +72,6 @@ namespace password_manager_wf.Views.Modals
             this.label1.TabIndex = 41;
             this.label1.Text = "User settings";
             // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_save.Animated = true;
-            this.btn_save.BorderRadius = 4;
-            this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_save.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(48)))), ((int)(((byte)(86)))));
-            this.btn_save.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(32)))), ((int)(((byte)(57)))));
-            this.btn_save.Location = new System.Drawing.Point(41, 210);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(255, 39);
-            this.btn_save.TabIndex = 194;
-            this.btn_save.Text = "Update username";
-            this.btn_save.TextOffset = new System.Drawing.Point(0, -2);
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
             // btn_cancel
             // 
             this.btn_cancel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -104,17 +82,20 @@ namespace password_manager_wf.Views.Modals
             this.btn_cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_cancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_cancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.ForeColor = System.Drawing.Color.Gray;
-            this.btn_cancel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_cancel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_cancel.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(41, 264);
+            this.btn_cancel.Location = new System.Drawing.Point(44, 374);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(255, 39);
-            this.btn_cancel.TabIndex = 195;
+            this.btn_cancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btn_cancel.Size = new System.Drawing.Size(252, 39);
+            this.btn_cancel.TabIndex = 3;
             this.btn_cancel.Text = "Close settings";
-            this.btn_cancel.TextOffset = new System.Drawing.Point(0, -2);
+            this.btn_cancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_cancel.TextOffset = new System.Drawing.Point(-9, -1);
+            this.guna2HtmlToolTip1.SetToolTip(this.btn_cancel, "Close this window");
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click_1);
             // 
             // btn_logout
@@ -130,14 +111,17 @@ namespace password_manager_wf.Views.Modals
             this.btn_logout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_logout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logout.ForeColor = System.Drawing.Color.Gray;
-            this.btn_logout.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.btn_logout.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_logout.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_logout.Location = new System.Drawing.Point(37, 355);
+            this.btn_logout.Location = new System.Drawing.Point(44, 320);
             this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(257, 39);
-            this.btn_logout.TabIndex = 196;
+            this.btn_logout.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btn_logout.Size = new System.Drawing.Size(254, 39);
+            this.btn_logout.TabIndex = 5;
             this.btn_logout.Text = "Log out";
-            this.btn_logout.TextOffset = new System.Drawing.Point(0, -2);
+            this.btn_logout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_logout.TextOffset = new System.Drawing.Point(-9, -1);
+            this.guna2HtmlToolTip1.SetToolTip(this.btn_logout, "Close session");
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // txt_username
@@ -153,14 +137,14 @@ namespace password_manager_wf.Views.Modals
             this.txt_username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txt_username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_username.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txt_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(223)))), ((int)(((byte)(130)))));
+            this.txt_username.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txt_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(48)))), ((int)(((byte)(86)))));
             this.txt_username.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_username.ForeColor = System.Drawing.Color.White;
             this.txt_username.HoverState.BorderColor = System.Drawing.Color.DimGray;
             this.txt_username.IconLeftOffset = new System.Drawing.Point(5, 0);
             this.txt_username.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.txt_username.Location = new System.Drawing.Point(41, 142);
+            this.txt_username.Location = new System.Drawing.Point(41, 143);
             this.txt_username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_username.MaxLength = 45;
             this.txt_username.Name = "txt_username";
@@ -169,13 +153,14 @@ namespace password_manager_wf.Views.Modals
             this.txt_username.PlaceholderText = "Enter a new username";
             this.txt_username.SelectedText = "";
             this.txt_username.Size = new System.Drawing.Size(255, 39);
-            this.txt_username.TabIndex = 38;
-            this.txt_username.TextOffset = new System.Drawing.Point(3, 0);
+            this.txt_username.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txt_username.TabIndex = 1;
+            this.txt_username.TextOffset = new System.Drawing.Point(-6, 0);
             this.txt_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_username_KeyDown);
             // 
             // btn_deleteAccount
             // 
-            this.btn_deleteAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_deleteAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_deleteAccount.Animated = true;
             this.btn_deleteAccount.BorderRadius = 4;
             this.btn_deleteAccount.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -185,17 +170,18 @@ namespace password_manager_wf.Views.Modals
             this.btn_deleteAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_deleteAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btn_deleteAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_deleteAccount.ForeColor = System.Drawing.Color.DarkGray;
+            this.btn_deleteAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(48)))), ((int)(((byte)(86)))));
             this.btn_deleteAccount.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btn_deleteAccount.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_deleteAccount.HoverState.Image = global::password_manager_wf.Properties.Resources.delete___hover;
-            this.btn_deleteAccount.Image = global::password_manager_wf.Properties.Resources.delete;
+            this.btn_deleteAccount.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(32)))), ((int)(((byte)(57)))));
             this.btn_deleteAccount.ImageSize = new System.Drawing.Size(15, 15);
-            this.btn_deleteAccount.Location = new System.Drawing.Point(271, 26);
+            this.btn_deleteAccount.Location = new System.Drawing.Point(44, 266);
             this.btn_deleteAccount.Name = "btn_deleteAccount";
             this.btn_deleteAccount.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btn_deleteAccount.Size = new System.Drawing.Size(33, 33);
-            this.btn_deleteAccount.TabIndex = 197;
+            this.btn_deleteAccount.Size = new System.Drawing.Size(254, 39);
+            this.btn_deleteAccount.TabIndex = 0;
+            this.btn_deleteAccount.Text = "Delete account";
+            this.btn_deleteAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_deleteAccount.TextOffset = new System.Drawing.Point(-9, -1);
             this.guna2HtmlToolTip1.SetToolTip(this.btn_deleteAccount, "Deleted account");
             this.btn_deleteAccount.Click += new System.EventHandler(this.btn_deleteAccount_Click);
             // 
@@ -211,12 +197,39 @@ namespace password_manager_wf.Views.Modals
             this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
             this.guna2HtmlToolTip1.ReshowDelay = 100;
             // 
+            // btn_save
+            // 
+            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_save.Animated = true;
+            this.btn_save.BorderRadius = 4;
+            this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_save.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btn_save.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.ForeColor = System.Drawing.Color.Gray;
+            this.btn_save.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btn_save.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Location = new System.Drawing.Point(44, 212);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btn_save.Size = new System.Drawing.Size(252, 39);
+            this.btn_save.TabIndex = 2;
+            this.btn_save.Text = "Update username";
+            this.btn_save.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_save.TextOffset = new System.Drawing.Point(-9, -1);
+            this.guna2HtmlToolTip1.SetToolTip(this.btn_save, "This will be update your curren username");
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
             // UserSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(340, 451);
+            this.ClientSize = new System.Drawing.Size(340, 476);
             this.Controls.Add(this.btn_deleteAccount);
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_cancel);
@@ -241,11 +254,11 @@ namespace password_manager_wf.Views.Modals
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btn_save;
         private Guna.UI2.WinForms.Guna2Button btn_logout;
         private Guna.UI2.WinForms.Guna2Button btn_cancel;
         public Guna.UI2.WinForms.Guna2TextBox txt_username;
         private Guna.UI2.WinForms.Guna2Button btn_deleteAccount;
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
+        private Guna.UI2.WinForms.Guna2Button btn_save;
     }
 }
