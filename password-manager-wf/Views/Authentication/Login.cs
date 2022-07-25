@@ -1,4 +1,5 @@
 ﻿using password_manager_wf.Controlles;
+using password_manager_wf.Properties;
 using password_manager_wf.Models;
 using password_manager_wf.Views;
 using System.Windows.Forms;
@@ -8,8 +9,6 @@ namespace password_manager_wf
 {
     public partial class Login : Form
     {
-        UserService userService = new UserService();
-
         public Login()
         {
             InitializeComponent();
@@ -24,7 +23,7 @@ namespace password_manager_wf
         //metodo para comprobar si hay una sesion guardada
         private void GetSession()
         {
-            if (Properties.Settings.Default.loggedIn == true)
+            if (Settings.Default.loggedIn == true)
             {
                 this.Hide();
                 MainApp mainApp = new MainApp();
@@ -53,12 +52,12 @@ namespace password_manager_wf
         {
             if(txt_password.UseSystemPasswordChar == true)
             {
-                txt_password.IconRight = Properties.Resources.hide_password;
+                txt_password.IconRight = Resources.hide_password;
                 txt_password.UseSystemPasswordChar = false;
             }
             else
             {
-                txt_password.IconRight = Properties.Resources.show_password;
+                txt_password.IconRight = Resources.show_password;
                 txt_password.UseSystemPasswordChar = true;
             }
         }
@@ -77,6 +76,8 @@ namespace password_manager_wf
                 user.password = txt_password.Text.Trim();
 
                 ShowLoading();
+
+                UserService userService = new UserService();
                 bool success = await userService.Login(user);
 
                 if (success)

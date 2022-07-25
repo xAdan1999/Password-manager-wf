@@ -1,4 +1,5 @@
 ﻿using password_manager_wf.Models.Responses;
+using password_manager_wf.Properties;
 using password_manager_wf.Models;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +13,10 @@ namespace password_manager_wf.Controlles
     public class UserService
     {
         //obtener la url base
-        readonly string baseURL = Properties.Settings.Default.usersURL;
+        readonly string baseURL = Settings.Default.userURL;
 
         //recuperar el token almacenado para dar autorizaciones
-        readonly string token = Properties.Settings.Default.token;
+        readonly string token = Settings.Default.token;
 
         public async Task<bool> Login(User user)
         {
@@ -200,11 +201,11 @@ namespace password_manager_wf.Controlles
         {
             try
             {
-                Properties.Settings.Default.loggedIn = userResponse.logged_in;
-                Properties.Settings.Default.userId = userResponse.user_id;
-                Properties.Settings.Default.username = userResponse.username;
-                Properties.Settings.Default.token = userResponse.token;
-                Properties.Settings.Default.Save();
+                Settings.Default.loggedIn = userResponse.logged_in;
+                Settings.Default.userId = userResponse.user_id;
+                Settings.Default.username = userResponse.username;
+                Settings.Default.token = userResponse.token;
+                Settings.Default.Save();
             }
             catch (Exception ex)
             {

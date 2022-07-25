@@ -21,8 +21,7 @@ namespace password_manager_wf.Views
 
         private void MainApp_Load(object sender, EventArgs e)
         {
-            dataGridView1.RowTemplate.Height = 45;
-            GetPasswordsOnLoad();
+            GetPasswords();
             GetUserInfo();
         }
 
@@ -49,27 +48,23 @@ namespace password_manager_wf.Views
             }
         }
 
-        private async void GetPasswordsOnLoad()
+        private async void GetPasswords()
         {
             passwords = await passwordService.GetPasswords();
+            dataGridView1.DataSource = passwords;
 
-            if(passwords != null)
+            //solo si hay datos aplicar el estilo al datagridview y
+            //hacer un conteo
+            if (dataGridView1.Rows.Count > 0)
             {
-                dataGridView1.DataSource = passwords;
                 SetDataGridViewStyle();
                 CountItems();
             }
         }
 
-        private async void GetPasswords()
-        {
-            passwords = await passwordService.GetPasswords();
-            dataGridView1.DataSource = passwords;
-            CountItems();
-        }
-
         private void SetDataGridViewStyle()
         {
+            dataGridView1.RowTemplate.Height = 45;
             dataGridView1.Columns[0].DisplayIndex = 6;
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.Columns[2].HeaderText = "Title";

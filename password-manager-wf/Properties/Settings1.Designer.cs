@@ -25,6 +25,18 @@ namespace password_manager_wf.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool loggedIn {
+            get {
+                return ((bool)(this["loggedIn"]));
+            }
+            set {
+                this["loggedIn"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int userId {
             get {
@@ -61,37 +73,25 @@ namespace password_manager_wf.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool loggedIn {
-            get {
-                return ((bool)(this["loggedIn"]));
-            }
-            set {
-                this["loggedIn"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3000/api/passwords")]
-        public string passwordsURL {
+        public string passwordURL {
             get {
-                return ((string)(this["passwordsURL"]));
+                return ((string)(this["passwordURL"]));
             }
             set {
-                this["passwordsURL"] = value;
+                this["passwordURL"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3000/api/users")]
-        public string usersURL {
+        public string userURL {
             get {
-                return ((string)(this["usersURL"]));
+                return ((string)(this["userURL"]));
             }
             set {
-                this["usersURL"] = value;
+                this["userURL"] = value;
             }
         }
     }

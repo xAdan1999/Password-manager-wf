@@ -8,8 +8,6 @@ namespace password_manager_wf
 {
     public partial class SignUp : Form
     {
-        UserService service = new UserService();
-
         public SignUp()
         {
             InitializeComponent();
@@ -72,6 +70,8 @@ namespace password_manager_wf
                 user.username = txt_username.Text.Trim();
 
                 ShowLoading();
+
+                UserService service = new UserService();
                 bool success = await service.SignUp(user);
 
                 if (success)

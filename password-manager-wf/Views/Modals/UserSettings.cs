@@ -75,7 +75,7 @@ namespace password_manager_wf.Views.Modals
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            using (Message logout = new Message("Log out", "You want to close session?"))
+            using (Message logout = new Message("Log out", "Are you sure you want to log out??"))
             {
                 var result = ModalBackgroud.CreateBackground(logout);
 

@@ -13,7 +13,7 @@ namespace password_manager_wf.Controlles
     public class PasswordService
     {
         //obtener la url base
-        readonly string baseURL = Properties.Settings.Default.passwordsURL;
+        readonly string baseURL = Properties.Settings.Default.passwordURL;
 
         //recuperar el token almacenado para dar autorizaciones
         readonly string token = Properties.Settings.Default.token;
