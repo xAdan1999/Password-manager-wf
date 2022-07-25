@@ -1,4 +1,5 @@
 ﻿using password_manager_wf.Views.Tools;
+using password_manager_wf.Properties;
 using password_manager_wf.Controlles;
 using password_manager_wf.Models;
 using System.Windows.Forms;
@@ -19,7 +20,7 @@ namespace password_manager_wf.Views.Modals
 
         private void ChangeUsername_Load(object sender, EventArgs e)
         {
-            txt_username.Text = Properties.Settings.Default.username;
+            txt_username.Text = Settings.Default.username;
         }
 
         private void txt_username_KeyDown(object sender, KeyEventArgs e)
@@ -40,15 +41,15 @@ namespace password_manager_wf.Views.Modals
             if (!string.IsNullOrEmpty(txt_username.Text))
             {
                 User user = new User();
+                user.id = Settings.Default.userId;
                 user.username = txt_username.Text.Trim();
-                user.id = Properties.Settings.Default.userId;
 
                 bool success = await userService.UpdateUsername(user);
 
                 if (success)
                 {
-                    Properties.Settings.Default.username = txt_username.Text;
-                    Properties.Settings.Default.Save();
+                    Settings.Default.username = txt_username.Text;
+                    Settings.Default.Save();
                     this.type = "update";
                     this.Close();
                 }
@@ -88,15 +89,11 @@ namespace password_manager_wf.Views.Modals
 
         private async void DeleteAccount()
         {
-            bool success = await userService.DeleteUser(Properties.Settings.Default.userId);
+            bool success = await userService.DeleteUser(Settings.Default.userId);
 
             if (success)
             {
-                Properties.Settings.Default.loggedIn = false;
-                Properties.Settings.Default.userId = 0;
-                Properties.Settings.Default.username = string.Empty;
-                Properties.Settings.Default.token = string.Empty;
-                Properties.Settings.Default.Save();
+                SetDefaultValues();
                 this.type = "deleted account";
                 this.Close();
             }
@@ -104,11 +101,7 @@ namespace password_manager_wf.Views.Modals
 
         private void DeleteSession()
         {
-            Properties.Settings.Default.loggedIn = false;
-            Properties.Settings.Default.userId = 0;
-            Properties.Settings.Default.username = string.Empty;
-            Properties.Settings.Default.token = string.Empty;
-            Properties.Settings.Default.Save();
+            SetDefaultValues();
             this.type = "logout";
             this.Close();
         }
@@ -117,6 +110,15 @@ namespace password_manager_wf.Views.Modals
         {
             this.type = "close";
             this.Close();
+        }
+
+        private void SetDefaultValues()
+        {
+            Settings.Default.loggedIn = false;
+            Settings.Default.userId = 0;
+            Settings.Default.username = "user";
+            Settings.Default.token = "token";
+            Settings.Default.Save();
         }
     }
 }

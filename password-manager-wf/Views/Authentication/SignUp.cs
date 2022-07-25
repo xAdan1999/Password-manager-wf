@@ -1,6 +1,7 @@
 ﻿using password_manager_wf.Controlles;
 using password_manager_wf.Models;
 using password_manager_wf.Views;
+using password_manager_wf.Tools;
 using System.Windows.Forms;
 using System;
 
@@ -27,11 +28,58 @@ namespace password_manager_wf
             }
         }
 
+        private void txt_email_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txt_email.Text))
+            {
+                if (lb_help.Visible == true)
+                { 
+                    lb_help.Visible = false;
+                }
+            }
+            else
+            {
+                if (!ValidateValues.ValidateEmail(txt_email.Text))
+                {
+                    lb_help.Visible = true;
+                }
+                else
+                {
+                    lb_help.Visible = false;
+                }
+            }
+        }
+
         private void txt_password_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
             {
                 CreateAccount();
+            }
+        }
+
+        private void txt_password_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_password.Text))
+            {
+                if (lb_help2.Visible == true)
+                {
+                    lb_help2.Visible = false;
+                    lb_help3.Visible = false;
+                }
+            }
+            else
+            {
+                if (ValidateValues.ValidatePassword(txt_password.Text) == false)
+                {
+                    lb_help2.Visible = true;
+                    lb_help3.Visible = true;
+                }
+                else
+                {
+                    lb_help2.Visible = false;
+                    lb_help3.Visible = false;
+                }
             }
         }
 
@@ -59,15 +107,21 @@ namespace password_manager_wf
 
         private async void CreateAccount()
         {
-            if ( !string.IsNullOrEmpty(txt_email.Text.Trim())
+            if(!string.IsNullOrEmpty(txt_email.Text.Trim())
             && !string.IsNullOrEmpty(txt_password.Text.Trim())
             && !string.IsNullOrEmpty(txt_username.Text.Trim()))
             {
                 User user = new User();
-
                 user.email = txt_email.Text.Trim();
                 user.password = txt_password.Text.Trim();
                 user.username = txt_username.Text.Trim();
+
+                if (lb_help.Visible == true || lb_help2.Visible == true)
+                {
+                    MessageBox.Show("Please check the email and password", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
                 ShowLoading();
 
@@ -81,6 +135,7 @@ namespace password_manager_wf
                     mainApp.ShowDialog();
                     this.Close();
                 }
+
                 HideLoading();
             }
             else

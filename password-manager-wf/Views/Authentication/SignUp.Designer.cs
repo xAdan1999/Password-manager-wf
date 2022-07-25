@@ -37,6 +37,9 @@ namespace password_manager_wf
             this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_username = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lb_help = new System.Windows.Forms.Label();
+            this.lb_help2 = new System.Windows.Forms.Label();
+            this.lb_help3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_createAccount
@@ -132,6 +135,7 @@ namespace password_manager_wf
             this.txt_password.TabIndex = 2;
             this.txt_password.TextOffset = new System.Drawing.Point(3, 0);
             this.txt_password.IconRightClick += new System.EventHandler(this.txt_password_IconRightClick);
+            this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
             this.txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_password_KeyDown);
             // 
             // txt_email
@@ -160,11 +164,12 @@ namespace password_manager_wf
             this.txt_email.Name = "txt_email";
             this.txt_email.PasswordChar = '\0';
             this.txt_email.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txt_email.PlaceholderText = "Example@example.com";
+            this.txt_email.PlaceholderText = "You@example.com";
             this.txt_email.SelectedText = "";
             this.txt_email.Size = new System.Drawing.Size(255, 39);
             this.txt_email.TabIndex = 1;
             this.txt_email.TextOffset = new System.Drawing.Point(3, 0);
+            this.txt_email.TextChanged += new System.EventHandler(this.txt_email_TextChanged);
             this.txt_email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_email_KeyDown);
             // 
             // label3
@@ -212,12 +217,55 @@ namespace password_manager_wf
             this.txt_username.TextOffset = new System.Drawing.Point(3, 0);
             this.txt_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_username_KeyDown);
             // 
+            // lb_help
+            // 
+            this.lb_help.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_help.AutoSize = true;
+            this.lb_help.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_help.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(48)))), ((int)(((byte)(86)))));
+            this.lb_help.Location = new System.Drawing.Point(537, 186);
+            this.lb_help.Name = "lb_help";
+            this.lb_help.Size = new System.Drawing.Size(84, 17);
+            this.lb_help.TabIndex = 30;
+            this.lb_help.Text = "Invalid email";
+            this.lb_help.Visible = false;
+            // 
+            // lb_help2
+            // 
+            this.lb_help2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_help2.AutoSize = true;
+            this.lb_help2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_help2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(48)))), ((int)(((byte)(86)))));
+            this.lb_help2.Location = new System.Drawing.Point(511, 262);
+            this.lb_help2.Name = "lb_help2";
+            this.lb_help2.Size = new System.Drawing.Size(110, 17);
+            this.lb_help2.TabIndex = 31;
+            this.lb_help2.Text = "Invalid password";
+            this.lb_help2.Visible = false;
+            // 
+            // lb_help3
+            // 
+            this.lb_help3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_help3.AutoSize = true;
+            this.lb_help3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_help3.ForeColor = System.Drawing.Color.Gray;
+            this.lb_help3.Location = new System.Drawing.Point(649, 289);
+            this.lb_help3.Name = "lb_help3";
+            this.lb_help3.Size = new System.Drawing.Size(210, 75);
+            this.lb_help3.TabIndex = 32;
+            this.lb_help3.Text = "● Has minimum 8 characters in length\r\n● At least one special character\r\n● At leas" +
+    "t one uppercase letter\r\n● At least one lowercase letter\r\n● At least one digit\r\n";
+            this.lb_help3.Visible = false;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(989, 597);
+            this.Controls.Add(this.lb_help3);
+            this.Controls.Add(this.lb_help2);
+            this.Controls.Add(this.lb_help);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_username);
@@ -245,5 +293,8 @@ namespace password_manager_wf
         private Guna.UI2.WinForms.Guna2TextBox txt_email;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txt_username;
+        private System.Windows.Forms.Label lb_help;
+        private System.Windows.Forms.Label lb_help2;
+        private System.Windows.Forms.Label lb_help3;
     }
 }

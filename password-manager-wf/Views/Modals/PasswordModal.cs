@@ -1,5 +1,6 @@
 ﻿using password_manager_wf.Views.Tools;
 using password_manager_wf.Controlles;
+using password_manager_wf.Properties;
 using password_manager_wf.Models;
 using System.Windows.Forms;
 using System;
@@ -34,7 +35,7 @@ namespace password_manager_wf.Views.Modals
 
         private void btn_deletePassword_Click(object sender, EventArgs e)
         {
-            using (Message deletePassword = new Message("Deleted","This item will be delete, are you sure?"))
+            using (Message deletePassword = new Message("Deleted", "This item will be delete, are you sure?"))
             {
                 var result = ModalBackgroud.CreateBackground(deletePassword);
 
@@ -89,12 +90,12 @@ namespace password_manager_wf.Views.Modals
         {
             if (txt_password.UseSystemPasswordChar == true)
             {
-                txt_password.IconRight = Properties.Resources.hide_password;
+                txt_password.IconRight = Resources.hide_password;
                 txt_password.UseSystemPasswordChar = false;
             }
             else
             {
-                txt_password.IconRight = Properties.Resources.show_password;
+                txt_password.IconRight = Resources.show_password;
                 txt_password.UseSystemPasswordChar = true;
             }
         }
@@ -102,7 +103,7 @@ namespace password_manager_wf.Views.Modals
         private async void InsertUpdate()
         {
             //verificar que ningun campo este vacio
-            if ( !string.IsNullOrEmpty(txt_title.Text.Trim())
+            if(!string.IsNullOrEmpty(txt_title.Text.Trim())
             && !string.IsNullOrEmpty(txt_usernameOrEmail.Text.Trim())
             && !string.IsNullOrEmpty(txt_password.Text.Trim()))
             {
@@ -119,7 +120,7 @@ namespace password_manager_wf.Views.Modals
                 {
                     /*como se va a agregar, construir el objeto con el userId
                      * ya que se agregara el registro para ese usuario*/
-                    password.user_id = Properties.Settings.Default.userId;
+                    password.user_id = Settings.Default.userId;
                     success = await passwordService.InsertPassword(password);
                 }
                 else

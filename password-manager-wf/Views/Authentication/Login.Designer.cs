@@ -38,6 +38,7 @@ namespace password_manager_wf
             this.label5 = new System.Windows.Forms.Label();
             this.txt_email = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // link_createAccount
@@ -165,7 +166,7 @@ namespace password_manager_wf
             this.txt_email.Name = "txt_email";
             this.txt_email.PasswordChar = '\0';
             this.txt_email.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txt_email.PlaceholderText = "Example@example.com";
+            this.txt_email.PlaceholderText = "You@example.com";
             this.txt_email.SelectedText = "";
             this.txt_email.Size = new System.Drawing.Size(255, 39);
             this.txt_email.TabIndex = 1;
@@ -210,12 +211,25 @@ namespace password_manager_wf
             this.txt_password.IconRightClick += new System.EventHandler(this.txt_password_IconRightClick);
             this.txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_password_KeyDown);
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Gray;
+            this.label6.Location = new System.Drawing.Point(888, 555);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "version 1.1";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(989, 597);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.label5);
@@ -247,6 +261,7 @@ namespace password_manager_wf
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txt_password;
         private Guna.UI2.WinForms.Guna2TextBox txt_email;
+        private System.Windows.Forms.Label label6;
     }
 }
 

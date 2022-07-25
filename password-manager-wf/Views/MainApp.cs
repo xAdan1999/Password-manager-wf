@@ -53,8 +53,6 @@ namespace password_manager_wf.Views
             passwords = await passwordService.GetPasswords();
             dataGridView1.DataSource = passwords;
 
-            //solo si hay datos aplicar el estilo al datagridview y
-            //hacer un conteo
             if (dataGridView1.Rows.Count > 0)
             {
                 SetDataGridViewStyle();
