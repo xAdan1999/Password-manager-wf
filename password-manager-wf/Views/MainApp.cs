@@ -1,6 +1,7 @@
 ﻿using password_manager_wf.Models.Responses;
 using password_manager_wf.Views.Modals;
 using password_manager_wf.Views.Tools;
+using password_manager_wf.Properties;
 using password_manager_wf.Controlles;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -21,13 +22,14 @@ namespace password_manager_wf.Views
 
         private void MainApp_Load(object sender, EventArgs e)
         {
+            dataGridView1.RowTemplate.Height = 45;
             GetPasswords();
             GetUserInfo();
         }
 
         private void GetUserInfo()
         {
-            lb_username.Text = Properties.Settings.Default.username;
+            lb_username.Text = Settings.Default.username;
         }
 
         private void btn_userSettings_Click(object sender, EventArgs e)
@@ -50,8 +52,10 @@ namespace password_manager_wf.Views
 
         private async void GetPasswords()
         {
+            lb_message.Visible = true;
             passwords = await passwordService.GetPasswords();
             dataGridView1.DataSource = passwords;
+            lb_message.Visible = false;
 
             if (dataGridView1.Rows.Count > 0)
             {
@@ -62,7 +66,6 @@ namespace password_manager_wf.Views
 
         private void SetDataGridViewStyle()
         {
-            dataGridView1.RowTemplate.Height = 45;
             dataGridView1.Columns[0].DisplayIndex = 6;
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.Columns[2].HeaderText = "Title";
@@ -100,11 +103,6 @@ namespace password_manager_wf.Views
         private void btn_reloadData_Click(object sender, EventArgs e)
         {
             GetPasswords();
-
-            if (dataGridView1.Rows.Count > 0)
-            {
-                SetDataGridViewStyle();
-            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

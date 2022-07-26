@@ -49,7 +49,7 @@ namespace password_manager_wf
             this.link_createAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.link_createAccount.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.link_createAccount.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(48)))), ((int)(((byte)(86)))));
-            this.link_createAccount.Location = new System.Drawing.Point(547, 481);
+            this.link_createAccount.Location = new System.Drawing.Point(539, 520);
             this.link_createAccount.Name = "link_createAccount";
             this.link_createAccount.Size = new System.Drawing.Size(47, 17);
             this.link_createAccount.TabIndex = 6;
@@ -64,7 +64,7 @@ namespace password_manager_wf
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(396, 481);
+            this.label3.Location = new System.Drawing.Point(388, 520);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 17);
             this.label3.TabIndex = 11;
@@ -84,7 +84,7 @@ namespace password_manager_wf
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
             this.btn_login.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(32)))), ((int)(((byte)(57)))));
-            this.btn_login.Location = new System.Drawing.Point(362, 393);
+            this.btn_login.Location = new System.Drawing.Point(354, 413);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(255, 39);
             this.btn_login.TabIndex = 5;
@@ -98,7 +98,7 @@ namespace password_manager_wf
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(362, 158);
+            this.label2.Location = new System.Drawing.Point(354, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 17);
             this.label2.TabIndex = 8;
@@ -110,7 +110,7 @@ namespace password_manager_wf
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(356, 114);
+            this.label1.Location = new System.Drawing.Point(348, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 40);
             this.label1.TabIndex = 7;
@@ -122,7 +122,7 @@ namespace password_manager_wf
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkGray;
-            this.label4.Location = new System.Drawing.Point(362, 216);
+            this.label4.Location = new System.Drawing.Point(354, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 9;
@@ -134,7 +134,7 @@ namespace password_manager_wf
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkGray;
-            this.label5.Location = new System.Drawing.Point(362, 294);
+            this.label5.Location = new System.Drawing.Point(354, 314);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 17);
             this.label5.TabIndex = 10;
@@ -160,7 +160,7 @@ namespace password_manager_wf
             this.txt_email.HoverState.BorderColor = System.Drawing.Color.DimGray;
             this.txt_email.IconLeftOffset = new System.Drawing.Point(8, 0);
             this.txt_email.IconLeftSize = new System.Drawing.Size(14, 14);
-            this.txt_email.Location = new System.Drawing.Point(362, 244);
+            this.txt_email.Location = new System.Drawing.Point(354, 264);
             this.txt_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_email.MaxLength = 45;
             this.txt_email.Name = "txt_email";
@@ -197,7 +197,7 @@ namespace password_manager_wf
             this.txt_password.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.txt_password.IconRightOffset = new System.Drawing.Point(9, 0);
             this.txt_password.IconRightSize = new System.Drawing.Size(17, 17);
-            this.txt_password.Location = new System.Drawing.Point(362, 322);
+            this.txt_password.Location = new System.Drawing.Point(354, 342);
             this.txt_password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_password.MaxLength = 45;
             this.txt_password.Name = "txt_password";
@@ -217,7 +217,7 @@ namespace password_manager_wf
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(888, 555);
+            this.label6.Location = new System.Drawing.Point(904, 594);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 17);
             this.label6.TabIndex = 12;
@@ -228,7 +228,7 @@ namespace password_manager_wf
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(989, 597);
+            this.ClientSize = new System.Drawing.Size(1005, 636);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_email);
@@ -241,7 +241,6 @@ namespace password_manager_wf
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(1005, 636);
             this.Name = "Login";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);

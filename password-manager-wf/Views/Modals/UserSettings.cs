@@ -63,7 +63,7 @@ namespace password_manager_wf.Views.Modals
 
         private void btn_deleteAccount_Click(object sender, EventArgs e)
         {
-            using (Message deleteAccount = new Message("Deleted Account","Your account will be deleted, are you sure?"))
+            using (Message deleteAccount = new Message("Delete Account","Your account will be deleted, are you sure?"))
             {
                 var result = ModalBackgroud.CreateBackground(deleteAccount);
 
@@ -76,7 +76,7 @@ namespace password_manager_wf.Views.Modals
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            using (Message logout = new Message("Log out", "Are you sure you want to log out??"))
+            using (Message logout = new Message("Log out", "Are you sure you want to log out?"))
             {
                 var result = ModalBackgroud.CreateBackground(logout);
 

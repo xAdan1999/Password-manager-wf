@@ -112,7 +112,7 @@ namespace password_manager_wf.Views.Modals
             this.lb_title.TabIndex = 42;
             this.lb_title.Text = "Deleted";
             // 
-            // Deleted
+            // Message
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -123,7 +123,8 @@ namespace password_manager_wf.Views.Modals
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_delete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Deleted";
+            this.Name = "Message";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeletePassword";
             this.ResumeLayout(false);
